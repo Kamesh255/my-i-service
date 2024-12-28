@@ -37,7 +37,7 @@ const Navbar = () => {
 
   const movePage = (path) => {
     setIsActive(false)
-    // navigate(path)
+    navigate(path)
   }
   return (
     <div>
@@ -48,10 +48,12 @@ const Navbar = () => {
           </div>
           <div class='navDec  '>
             <div class='d-flex justify-content-center align-items-center  gap-5 h-100  '>
-              <p class='fs-5 fw-bold'>Home</p>
-              <p class='fs-5 fw-bold'>About</p>
-              <p class='fs-5 fw-bold'>Service</p>
-              <p class='fs-5 fw-bold'>Contact Us</p>
+              <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/')}>Home</p>
+              <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/about-us')}>About Us</p>
+              <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/services')}>Service</p>
+              <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/')} >Project</p>
+
+              <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/')}>Contact Us</p>
             </div>
           </div>
           <div class='d-flex gap-5 align-items-center'>
@@ -71,8 +73,8 @@ const Navbar = () => {
           <div class='d-grid justify-content-center  align-items-center' style={{ height: '100%' }}>
             <div class='d-grid gap-3' style={{color:'#D5ECF0'}} >
               <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/')}>Home</p>
-              <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/')}>About Us</p>
-              <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/')}>Service</p>
+              <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/about-us')}>About Us</p>
+              <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/services')}>Service</p>
               <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/')}>Contact Us</p>
             </div>
           </div>
