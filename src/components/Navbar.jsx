@@ -44,7 +44,7 @@ const Navbar = () => {
       <div class='navbarMain d-flex align-items-center ' style={{ width: '100%', overflowX: 'hidden' }}>
         <div class=' col-11 m-auto d-flex align-items-center justify-content-between'>
           <div style={{ height: '65px' }}>
-            <img src={require('../image/logo.jpg')} style={{ height: '100%' }} alt="" />
+            <img src={require('../image/logo.jpg')} onClick={()=>navigate('/')} style={{ height: '100%' ,cursor:'pointer'}} alt="" />
           </div>
           <div class='navDec  '>
             <div class='d-flex justify-content-center align-items-center  gap-5 h-100  '>

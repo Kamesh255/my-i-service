@@ -1,10 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Footer = () => {
+
+    const navigate = useNavigate()
     return (
         <div class='bgdmg'>
             <div class='col-11 m-auto row'>
-                <div class='col-md-4'>
+                <div class='col-lg-3 col-md-6'>
                     <br />
                     <div class='col-11  text-start '>
                         <img src={require('../image/logo2.png')} style={{ width: '100px' }} alt="" />
@@ -30,32 +33,43 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div class='col-md-4 col-sm-6'>
+                <div class='col-lg-5 col-sm-6'>
                     <br />
-                    <div class='col-11 m-auto text-start lmg'>
-                        <p class='fs-5'><b>Menu</b></p>
-                        <p class='mt-1'>Home</p>
-                        <p class='mt-1'>About</p>
-                        <p class='mt-1'>Service</p>
-                        <p class='mt-1'>Contact</p>
+                    <div class='col-11 m-auto text-start lmg row'>
+                        <p class='fs-5 col-12'><b>Menu</b></p>
+                        <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/')}>Home</p>
+                        <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/about-us')}>About</p>
+                        <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/services')}>Service</p>
+                        <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/projects')}>Projects</p> 
+                        <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/contact-us')}>Contact Us</p> 
+                        <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/real-estate')}>Real Estate </p>
+                        <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/clothing')}>Clothing</p> 
+                        <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/food')}>Food</p> 
+                        <p class='mt-1 ' style={{cursor:'pointer'}} onClick={()=>navigate('/builder-services')}>Builder Services</p> 
+                        <p class='mt-1 ' style={{cursor:'pointer'}} onClick={()=>navigate('/architectural-services')}>Architectural Services</p> 
+                        <p class='mt-1 ' style={{cursor:'pointer'}} onClick={()=>navigate('/online-store-services')}>Online Store Services</p> 
+                        <p class='mt-1 ' style={{cursor:'pointer'}} onClick={()=>navigate('/healthy-food-services')}>Food Healthy and hygienic</p> 
                     </div>
                 </div>
 
-                <div class='col-md-4 col-sm-6'>
+                <div class='col-lg-3 col-sm-6'>
                     <br />
                     <div class='col-11 m-auto text-start lmg'>
                         <p class='fs-5'><b>Address </b></p>
                         <p class=''>Arera colony bhopal 462016</p>
 
                         <p class='fs-5 mt-2'><b>Mobile </b></p>
-                        <p class=''>7000632088</p>
+                        <p class=''><a href='tel:9826155407' style={{textDecoration:'none'}}>9826155407</a></p>
+
+          
 
                         <p class='fs-5 mt-2'><b>Mail </b></p>
-                        <p class=''>mayiservices@gmail.com</p>
+                        <p class=''><a href='mailto:mayiservices@gmail.com' style={{textDecoration:'none'}}>mayiservices@gmail.com</a> </p>
                     </div>
                 </div>
 
             </div>
+            <br />
         </div>
     )
 }
