@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import SubContact from './SubContact'
 
 const FoodService= () => {
+       useEffect(() => {
+              AOS.init({ duration: 2000 });
+          }, [])
     return (
         <div>
             <div style={{ height: '100vh', backgroundImage: `url(${require('../image/food2.png')})`, backgroundPosition: "center", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
@@ -18,39 +23,52 @@ const FoodService= () => {
                 <p class='fs-1 fw-bold' data-aos="fade-up">What We Offer</p>
 
                 <ul class='text-start'>
-                    <li class='fs-3 fw-semibold' data-aos="fade-up">Men’s Collection:  
+                    <li class='fs-3 fw-semibold' data-aos="fade-up">Healthy Meal Plans:   
                         <ul class='fs-5 fw-normal'>
-                            <li>Discover a wide range of stylish apparel, from casual tees and jeans to formal suits and blazers. </li>
-                            <li>Accessories like watches, belts, and footwear to complete your look. </li>
-                            <li>Seasonal collections to keep you trendy all year round. </li>  
+                            <li>Customizable meal options for individuals, families, and groups.</li>
+                            <li> Balanced diets that include the right mix of proteins, carbs, and fats. </li>
+                            <li> Special plans for fitness enthusiasts, weight management, and dietary restrictions. </li>
+                          
+                           
                         </ul>
                     </li>
 
-                    <li class='fs-3 fw-semibold' data-aos="fade-up">Women’s Collection:  
+                    <li class='fs-3 fw-semibold' data-aos="fade-up">Fresh Ingredients:   
                         <ul class='fs-5 fw-normal'>
-                            <li>A stunning selection of dresses, tops, skirts, and ethnic wear for every occasion. </li>
-                            <li>Elegant and functional activewear for the fitness enthusiast. </li>
-                            <li>Statement accessories, including handbags, jewelry, and scarves. </li>  
+                            <li> Locally sourced produce, meats, and dairy to ensure freshness and quality. </li>
+                            <li> No preservatives, artificial flavors, or harmful additives. </li>
+                            <li> Seasonal ingredients to keep your meals exciting and diverse. </li>
+                       
                         </ul>
                     </li>
 
-                    <li class='fs-3 fw-semibold' data-aos="fade-up">Kids’ Fashion:  
+                    <li class='fs-3 fw-semibold' data-aos="fade-up">Hygienic Preparation:   
                         <ul class='fs-5 fw-normal'>
-                            <li>Comfortable and trendy clothing for toddlers, kids, and teens. </li>
-                            <li>Fun prints, vibrant colors, and durable fabrics perfect for daily wear or special events. </li>
-                            <li>Shoes, backpacks, and other essentials for a complete outfit. </li>  
+                            <li> A state-of-the-art kitchen environment that follows strict hygiene protocols. </li>
+                            <li>Highly trained chefs and staff equipped with modern food safety techniques.  </li>
+                            <li> Regular quality checks and compliance with food safety standards. </li>
+                       
+                           
                         </ul>
                     </li>
 
-                    <li class='fs-3 fw-semibold' data-aos="fade-up">Seasonal Trends and Offers:  
+                    <li class='fs-3 fw-semibold' data-aos="fade-up">Catering Services:   
                         <ul class='fs-5 fw-normal'>
-                            <li>Stay updated with our latest seasonal collections, from summer breezy outfits to cozy winter wear. </li>
-                            <li>Enjoy exclusive discounts and deals during festive seasons and special promotions. </li>
+                            <li> Tailored catering solutions for events, parties, and corporate gatherings. </li>
+                            <li> A variety of menu options, from traditional to modern cuisines. </li>
+                            <li>Personalized service to meet the unique needs of your event.  </li>
+                         
+                           
                         </ul>
                     </li>
 
-                    
-
+                    <li class='fs-3 fw-semibold' data-aos="fade-up">Quick and Reliable Delivery:   
+                        <ul class='fs-5 fw-normal'>
+                            <li> Freshly prepared meals delivered straight to your doorstep. </li>
+                            <li>Temperature-controlled packaging to preserve freshness and flavor.  </li>
+                            <li>Timely service for both individual orders and bulk deliveries.  </li> 
+                        </ul>
+                    </li> 
                     
                 </ul>
 
@@ -59,11 +77,11 @@ const FoodService= () => {
             <div class='col-11 m-auto rounded-4 mt-4 bgdmg' style={{ border: "5px solid #082b31" }} data-aos="fade-up">
                 <br />
                 <div class='col-11 m-auto lmg text-start'>
-                    <p class='fs-2 fw-bold' >Shop with Ease </p>
+                    <p class='fs-2 fw-bold' >Our Process</p>
                     <ul class='fs-5 text-start my-2'>
-                        <li><b>Seamless Browsing:</b>Use our advanced filters to find the perfect outfit based on size, color, style, and occasion.</li>
-                        <li><b>Easy Payments:</b> Multiple payment options, including credit cards, debit cards, wallets, and cash on delivery.</li>
-                        <li><b>Hassle-Free Returns: </b> Simplified return and exchange policies to ensure your satisfaction.</li>
+                        <li><b>Sourcing:</b>Partnering with trusted local farmers and suppliers for the freshest ingredients.</li>
+                        <li><b>Preparation:</b>Utilizing advanced cooking techniques to retain nutrients and enhance flavor.</li>
+                        <li><b>Delivery: </b>Using insulated packaging to ensure your food reaches you in perfect condition.</li>
  
                     </ul>
                 </div>
@@ -72,8 +90,8 @@ const FoodService= () => {
 
             <div class='col-11 m-auto mt-4 text-start'>
          
-                    <p class='fs-2 fw-bold' data-aos="fade-up">Start Your Fashion Journey Today! </p>
-                    <p class='fs-5' data-aos="fade-up">Explore the world of fashion with <b>May I Services’ Online Fashion Store</b>. Find the perfect outfit that resonates with your style and makes every moment special. Shop now and redefine your wardrobe with elegance and ease!</p>
+                    <p class='fs-2 fw-bold' data-aos="fade-up">Join the Healthy Food Revolution </p>
+                    <p class='fs-5' data-aos="fade-up">At May I Services, we’re on a mission to redefine how you experience food. Healthy and hygienic doesn’t have to mean boring—our diverse menu and commitment to quality make every meal a delight.</p>
             </div>
 
             <SubContact/>

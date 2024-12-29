@@ -53,7 +53,7 @@ const Navbar = () => {
               <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/services')}>Service</p>
               <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/projects')} >Project</p>
 
-              <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/')}>Contact Us</p>
+              <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/contact-us')}>Contact Us</p>
             </div>
           </div>
           <div class='d-flex gap-5 align-items-center'>
@@ -75,7 +75,9 @@ const Navbar = () => {
               <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/')}>Home</p>
               <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/about-us')}>About Us</p>
               <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/services')}>Service</p>
-              <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/')}>Contact Us</p>
+              <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/projects')}>Projects</p>
+
+              <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/contact-us')}>Contact Us</p>
             </div>
           </div>
 

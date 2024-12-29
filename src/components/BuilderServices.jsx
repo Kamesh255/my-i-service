@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import SubContact from './SubContact'
 
 const BuilderServices = () => {
+       useEffect(() => {
+              AOS.init({ duration: 2000 });
+          }, [])
     return (
         <div>
             <div style={{ height: '100vh', backgroundImage: `url(${require('../image/builder.png')})`, backgroundPosition: "center", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>

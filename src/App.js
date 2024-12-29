@@ -15,6 +15,7 @@ import BuilderServices from './components/BuilderServices';
 import ArchitecturalServices from './components/ArchitecturalServices';
 import OnlineStore from './components/OnlineStore';
 import FoodService from './components/FoodService';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
     <Route path='/architectural-services' element={<ArchitecturalServices/>}/>
     <Route path='/online-store-services' element={<OnlineStore/>}/>
     <Route path='/healthy-food-services' element={<FoodService/>}/>
+    <Route path='/contact-us' element={<Contact/>}/>
+
 
 
 
