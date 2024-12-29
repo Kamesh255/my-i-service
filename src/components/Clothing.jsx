@@ -36,7 +36,7 @@ const Clothing = () => {
                                     <br />
                                     <p class='fs-2 fw-bold mt-2'> Online fashion store                                    </p>
                                     <p class='fs-5'>Discover trendy, affordable clothing for all occasions. Shop the latest styles with ease and elevate your wardrobe effortlessly.</p>
-                                    <button class='btn btn-outline-light rounded-5 mt-3 '>Know More</button>
+                                    <button class='btn btn-outline-light rounded-5 mt-3 ' onClick={()=>navigate('/online-store-services')}>Know More</button>
                                 </div>
                             </div>
                         </div> 

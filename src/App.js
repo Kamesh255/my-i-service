@@ -10,6 +10,11 @@ import RealState from './components/RealState';
 import Clothing from './components/Clothing';
 import Food from './components/Food';
 import ScrollToTop from './ScrollToTop';
+import Projects from './components/Projects';
+import BuilderServices from './components/BuilderServices';
+import ArchitecturalServices from './components/ArchitecturalServices';
+import OnlineStore from './components/OnlineStore';
+import FoodService from './components/FoodService';
 
 function App() {
   return (
@@ -23,6 +28,16 @@ function App() {
     <Route path='/real-estate' element={<RealState/>}/>
     <Route path='/clothing' element={<Clothing/>}/>
     <Route path='/food' element={<Food/>}/>
+    <Route path='/projects' element={<Projects/>}/>
+    <Route path='/builder-services' element={<BuilderServices/>}/>
+    <Route path='/architectural-services' element={<ArchitecturalServices/>}/>
+    <Route path='/online-store-services' element={<OnlineStore/>}/>
+    <Route path='/healthy-food-services' element={<FoodService/>}/>
+
+
+
+
+
 
 
 

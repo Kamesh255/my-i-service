@@ -51,7 +51,7 @@ const Navbar = () => {
               <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/')}>Home</p>
               <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/about-us')}>About Us</p>
               <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/services')}>Service</p>
-              <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/')} >Project</p>
+              <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/projects')} >Project</p>
 
               <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/')}>Contact Us</p>
             </div>

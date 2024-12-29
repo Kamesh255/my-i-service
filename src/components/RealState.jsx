@@ -36,7 +36,7 @@ const RealState = () => {
                                     <br />
                                     <p class='fs-2 fw-bold mt-2'>Builder Services</p>
                                     <p class='fs-5'>Providing reliable construction solutions for residential and commercial projects, delivering quality and durability you can trust.</p>
-                                    <button class='btn btn-outline-light rounded-5 mt-3 '>Know More</button>
+                                    <button class='btn btn-outline-light rounded-5 mt-3 ' onClick={()=>navigate('/builder-services')}>Know More</button>
                                 </div>
                             </div>
                         </div> 
@@ -49,7 +49,7 @@ const RealState = () => {
                                     <br />
                                     <p class='fs-2 fw-bold mt-2'>Architectural & Designing</p>
                                     <p class='fs-5'>Creating innovative, functional, and aesthetically pleasing designs tailored to meet your unique needs and vision.</p>
-                                    <button class='btn btn-outline-light rounded-5 mt-3 '>Know More</button>
+                                    <button class='btn btn-outline-light rounded-5 mt-3 ' onClick={()=>navigate('/architectural-services')}>Know More</button>
                                 </div>
                             </div>
                         </div> 

@@ -36,7 +36,7 @@ const Food = () => {
                                     <br />
                                     <p class='fs-2 fw-bold mt-2'>Healthy and hygienic</p>
                                     <p class='fs-5'>Experience fresh, nutritious, and safely prepared food options designed to support your well-being and lifestyle.</p>
-                                    <button class='btn btn-outline-light rounded-5 mt-3 '>Know More</button>
+                                    <button class='btn btn-outline-light rounded-5 mt-3 ' onClick={()=>navigate('/healthy-food-services')}>Know More</button>
                                 </div>
                             </div>
                         </div> 
