@@ -19,7 +19,7 @@ const Contact = () => {
                             <p class='fs-4 fw-semibold'>Address :</p>
                             <p class='fs-5'>Arera colony bhopal 462016</p>
                             <p class='fs-4 fw-semibold mt-2'>Mobile :</p>
-                            <p class='fs-5'><a href='tel:9826155407' style={{textDecoration:'none'}}>9826155407</a></p>
+                            <p class='fs-5'><a href='tel:+919407508822' style={{textDecoration:'none'}}>+91 94075 08822</a></p>
                             <p class='fs-4 fw-semibold mt-2'>Mail :</p>
                             <p class='fs-5'><a href='mailto:mayiservices@gmail.com' style={{textDecoration:'none'}}>mayiservices@gmail.com</a> </p>
 

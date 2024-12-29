@@ -59,7 +59,7 @@ const Footer = () => {
                         <p class=''>Arera colony bhopal 462016</p>
 
                         <p class='fs-5 mt-2'><b>Mobile </b></p>
-                        <p class=''><a href='tel:9826155407' style={{textDecoration:'none'}}>9826155407</a></p>
+                        <p class=''><a href='tel:+9194075 08822' style={{textDecoration:'none'}}>+91 94075 08822</a></p>
 
           
 
