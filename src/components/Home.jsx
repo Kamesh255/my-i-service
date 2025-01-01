@@ -4,6 +4,7 @@ import MisSvg from './MisSvg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SubContact from './SubContact';
+import { useNavigate } from 'react-router-dom';
 
 const slider = [
   {
@@ -36,6 +37,8 @@ const Home = () => {
   useEffect(() => {
     AOS.init({ duration: 2000 });
   }, [])
+
+  const navigate = useNavigate()
   return (
     <div>
       <div class='bgdmg d-flex align-items-center justify-content-center' style={{ height: '100vh' }}>
@@ -49,7 +52,7 @@ const Home = () => {
 
           </div>
           {/* <MisSvg  /> */}
-          <p class='lmg fs-1' >May <span style={{ color: 'red' }}>i</span>  Services</p>
+          <p class='lmg fs-1 fw-semibold' >May <span class='fw-bold' style={{ color: 'red' }}>i</span>  Services</p>
         </div>
       </div>
 
@@ -78,7 +81,7 @@ const Home = () => {
                     <div class='col-lg-8 col-11 m-auto'>
                       <p class='display-1 lmg fw-bold'>{el?.title}</p>
                       <p class='fs-5 lmg'>{el?.text}</p>
-                      <button class='btn btn-outline-light mt-4 fw-bold rounded-5'>Know More</button>
+                      <button class='btn btn-outline-light mt-4 fw-bold rounded-5' onClick={()=>navigate('/services')}>Know More</button>
 
                     </div>
                   </div>
@@ -112,7 +115,7 @@ const Home = () => {
               <li class='mt-2' data-aos="fade-up"><b>Trusted Expertise:</b> Backed by years of experience in real estate, fashion, and food services.</li>
               <li class='mt-2' data-aos="fade-up"><b>Client First Approach:</b> Your satisfaction is always our top priority.</li>
             </ul>
-            <button data-aos="fade-up" class='btn  btn-outline-light rounded-5'>Know More</button>
+            <button data-aos="fade-up" class='btn  btn-outline-light rounded-5' onClick={()=>navigate('/about-us')}>Know More</button>
             <br /><br />
           </div>
         </div>

@@ -56,7 +56,7 @@ const Footer = () => {
                     <br />
                     <div class='col-11 m-auto text-start lmg'>
                         <p class='fs-5'><b>Address </b></p>
-                        <p class=''>Arera colony bhopal 462016</p>
+                        <p class=''>Ground Floor SR. MIG 12 E - 3 Arera Colony Bhopal 462016</p>
 
                         <p class='fs-5 mt-2'><b>Mobile </b></p>
                         <p class=''><a href='tel:+9194075 08822' style={{textDecoration:'none'}}>+91 94075 08822</a></p>

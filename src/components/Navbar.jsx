@@ -50,8 +50,8 @@ const Navbar = () => {
             <div class='d-flex justify-content-center align-items-center  gap-5 h-100  '>
               <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/')}>Home</p>
               <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/about-us')}>About Us</p>
-              <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/services')}>Service</p>
-              <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/projects')} >Project</p>
+              <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/services')}>Services</p>
+              <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/projects')} >Projects</p>
 
               <p class='fs-5 fw-bold' style={{cursor:'pointer'}} onClick={()=>navigate('/contact-us')}>Contact Us</p>
             </div>
@@ -74,7 +74,7 @@ const Navbar = () => {
             <div class='d-grid gap-3' style={{color:'#D5ECF0'}} >
               <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/')}>Home</p>
               <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/about-us')}>About Us</p>
-              <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/services')}>Service</p>
+              <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/services')}>Services</p>
               <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/projects')}>Projects</p>
 
               <p class='fs-1 fw-semibold' style={{ cursor: 'pointer' }} onClick={() => movePage('/contact-us')}>Contact Us</p>

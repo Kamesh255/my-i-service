@@ -10,7 +10,7 @@ const AboutUs = () => {
         <div>
             <div style={{ height: '100vh', backgroundImage: `url(${require('../image/about2.png')})`, backgroundPosition: "center", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
                 <div class='d-flex align-items-center justify-content-center' style={{ width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)' }}>
-                    <p class='display-1 fw-bold text-white' data-aos="zoom-in">About <span class='text-danger'>Us</span></p>
+                    <p class='display-1 fw-bold text-white' data-aos="zoom-in">Abou<span class='text-danger'>t</span> Us</p>
                 </div>
             </div>
 
