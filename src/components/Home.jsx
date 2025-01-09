@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import Svg from './MisSvg'
-import MisSvg from './MisSvg'
+ 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SubContact from './SubContact';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const slider = [
   {
@@ -23,14 +23,6 @@ const slider = [
   },
 ]
 
-const ourPartner = [
-  `${require('../image/ap1.png')}`,
-  `${require('../image/ap2.png')}`,
-  `${require('../image/ap3.png')}`,
-  `${require('../image/ap1.png')}`,
-  `${require('../image/ap2.png')}`,
-  `${require('../image/ap3.png')}`,
-]
 
 const Home = () => {
 
@@ -41,6 +33,12 @@ const Home = () => {
   const navigate = useNavigate()
   return (
     <div>
+      <Helmet> 
+      <meta charSet="utf-8" />
+        <title>May i Services</title>
+        <meta name="description" content="'May I Services' provides guidance and services in three key areas: real estate, economical clothing, and healthy food." />
+        <meta name="keywords" content="real estate, economical clothing, healthy food, Services" />
+      </Helmet>
       <div class='bgdmg d-flex align-items-center justify-content-center' style={{ height: '100vh' }}>
         <div>
           <br />
@@ -61,7 +59,7 @@ const Home = () => {
           <div class='col-11 m-auto text-start'>
             <p class='fw-semibold fs-1 ' data-aos="fade-up">Welcome to May i Service</p>
             <p data-aos="fade-up">At <b>May i Service</b>, we are committed to making your real estate journey smooth and rewarding. Whether you’re buying, selling, or investing, our team of experts is here to guide you with personalized solutions tailored to your needs. With years of experience and a deep understanding of the market, we’ve built a reputation for delivering results that exceed expectations.</p>
-            <button class='btn btn-outline-dark rounded-5 mt-3' data-aos="fade-up">Know More</button>
+            <button class='btn btn-outline-dark rounded-5 mt-3' data-aos="fade-up" onClick={()=>navigate('/about-us')} >Know More</button>
 
           </div>
         </div>
@@ -76,12 +74,12 @@ const Home = () => {
           {
             slider?.map((el, i) => {
               return (
-                <div style={{ height: '100vh', backgroundImage: `url(${el?.image})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' , backgroundPosition:'center'}} class={i == [0] ? `carousel-item active` : 'carousel-item'}>
+                <div style={{ height: '100vh', backgroundImage: `url(${el?.image})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} class={i == [0] ? `carousel-item active` : 'carousel-item'}>
                   <div class='d-flex align-items-center justify-content-center' style={{ width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)' }}>
                     <div class='col-lg-8 col-11 m-auto'>
                       <p class='display-1 lmg fw-bold'>{el?.title}</p>
                       <p class='fs-5 lmg'>{el?.text}</p>
-                      <button class='btn btn-outline-light mt-4 fw-bold rounded-5' onClick={()=>navigate('/services')}>Know More</button>
+                      <button class='btn btn-outline-light mt-4 fw-bold rounded-5' onClick={() => navigate('/services')}>Know More</button>
 
                     </div>
                   </div>
@@ -115,17 +113,17 @@ const Home = () => {
               <li class='mt-2' data-aos="fade-up"><b>Trusted Expertise:</b> Backed by years of experience in real estate, fashion, and food services.</li>
               <li class='mt-2' data-aos="fade-up"><b>Client First Approach:</b> Your satisfaction is always our top priority.</li>
             </ul>
-            <button data-aos="fade-up" class='btn  btn-outline-light rounded-5' onClick={()=>navigate('/about-us')}>Know More</button>
+            <button data-aos="fade-up" class='btn  btn-outline-light rounded-5' onClick={() => navigate('/about-us')}>Know More</button>
             <br /><br />
           </div>
         </div>
         <div class='col-md-6 p-0'>
-          <div class='p-sm-5 p-3'> 
-          <img class='rounded-4' data-aos="fade-in" src={require('../image/why.jpg')} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="" />
+          <div class='p-sm-5 p-3'>
+            <img class='rounded-4' data-aos="fade-in" src={require('../image/why.jpg')} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="" />
           </div>
         </div>
       </div>
-{/* 
+      {/* 
       <div class='mt-3'>
         <p class=' display-4 fw-bold' data-aos="fade-down">Our Partner</p>
 

@@ -2,12 +2,19 @@ import React, { useEffect } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SubContact from './SubContact';
+import { Helmet } from 'react-helmet';
 const AboutUs = () => {
     useEffect(() => {
         AOS.init({ duration: 2000 });
     }, [])
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>About Us - May i Services</title>
+                <meta name="description" content="'May I Services' provides guidance and services in three key areas: real estate, economical clothing, and healthy food." />
+                <meta name="keywords" content="real estate, economical clothing, healthy food, Services" />
+            </Helmet>
             <div style={{ height: '100vh', backgroundImage: `url(${require('../image/about2.png')})`, backgroundPosition: "center", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
                 <div class='d-flex align-items-center justify-content-center' style={{ width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)' }}>
                     <p class='display-1 fw-bold text-white' data-aos="zoom-in">Abou<span class='text-danger'>t</span> Us</p>
@@ -22,7 +29,7 @@ const AboutUs = () => {
                 </div>
                 <div class='col-md-6'>
                     <div class='p-3'>
-                        <img class='rounded-4' data-aos="zoom-in" src={require('../image/about.jpg')} style={{ width: '100%' }} alt="" />
+                        <img class='rounded-4' data-aos="zoom-in" src={require('../image/about.png')} style={{ width: '100%' }} alt="" />
                     </div>
                 </div>
             </div>
@@ -35,7 +42,7 @@ const AboutUs = () => {
 
             <div class='col-11 row gap-md-0 gap-4 m-auto mt-5'>
                 <div class='col-md-6'>
-                    <div class='col-sm-11 m-auto  rounded-4 h-100'data-aos="fade-up" style={{background:'#1A3E1A'}}>
+                    <div class='col-sm-11 m-auto  rounded-4 h-100' data-aos="fade-up" style={{ background: '#1A3E1A' }}>
                         <div class='col-11 m-auto text-start lmg'>
                             <br />
                             <p class='fs-1  fw-bold'>Mission</p>
@@ -46,7 +53,7 @@ const AboutUs = () => {
                 </div>
 
                 <div class='col-md-6'>
-                    <div class='col-sm-11 m-auto  rounded-4 h-100' data-aos="fade-up" style={{background:'#430606'}}>
+                    <div class='col-sm-11 m-auto  rounded-4 h-100' data-aos="fade-up" style={{ background: '#430606' }}>
                         <div class='col-11 m-auto text-start lmg'>
                             <br />
                             <p class='fs-1  fw-bold'>Vision</p>
@@ -81,7 +88,7 @@ const AboutUs = () => {
             </div>
 
 
-            <SubContact/>
+            <SubContact />
         </div >
     )
 }

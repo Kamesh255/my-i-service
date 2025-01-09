@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SubContact from './SubContact'
+import { Helmet } from 'react-helmet';
 
 const OnlineStore = () => {
        useEffect(() => {
@@ -9,6 +10,12 @@ const OnlineStore = () => {
           }, [])
     return (
         <div>
+               <Helmet>
+               <meta charSet="utf-8" />
+                <title>Clothing - May i Services</title>
+                <meta name="description" content="'May I Services' provides guidance and services in three key areas: real estate, economical clothing, and healthy food." />
+                <meta name="keywords" content="clothing , services" />
+            </Helmet>
             <div style={{ height: '100vh', backgroundImage: `url(${require('../image/onlineCloth.png')})`, backgroundPosition: "center", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
                 <div class='d-flex align-items-center justify-content-center' style={{ width: '100%', height: '100%', background: 'rgba(0,0,0,0.7)' }}>
                     <p class='display-1 fw-bold text-white'  data-aos="fade-up">Your One-Stop  <span class='text-danger'>Destination </span> for  <br />Trendy and Affordable Fashion</p>

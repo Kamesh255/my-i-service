@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SubContact from './SubContact';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const RealState = () => {
     useEffect(() => {
@@ -12,6 +13,12 @@ const RealState = () => {
     const navigate = useNavigate()
     return (
         <div>
+               <Helmet>
+               <meta charSet="utf-8" />
+                <title>Real Estate - May i Services</title>
+                <meta name="description" content="'May I Services' provides guidance and services in three key areas: real estate, economical clothing, and healthy food." />
+                <meta name="keywords" content="real estate , services" />
+            </Helmet>
             <div style={{ height: '100vh', backgroundImage: `url(${require('../image/realState.png')})`, backgroundPosition: "center", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
                 <div class='d-flex align-items-center justify-content-center' style={{ width: '100%', height: '100%', background: 'rgba(0,0,0,0.7)' }}>
                     <p class='display-1 fw-bold text-white' data-aos="zoom-in">Real<span class='text-danger'> E</span>state</p>

@@ -2,16 +2,23 @@ import React, { useEffect } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SubContact from './SubContact'
+import { Helmet } from 'react-helmet';
 
 const ArchitecturalServices = () => {
-       useEffect(() => {
-              AOS.init({ duration: 2000 });
-          }, [])
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Architectural - May i Services</title>
+                <meta name="description" content="'May I Services' provides guidance and services in three key areas: real estate, economical clothing, and healthy food." />
+                <meta name="keywords" content="real estate, architectural" />
+            </Helmet>
             <div style={{ height: '100vh', backgroundImage: `url(${require('../image/builder.png')})`, backgroundPosition: "center", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
                 <div class='d-flex align-items-center justify-content-center' style={{ width: '100%', height: '100%', background: 'rgba(0,0,0,0.7)' }}>
-                    <p class='display-1 fw-bold text-white'  data-aos="fade-up">Turning  <span class='text-danger'>Vision</span>  into Reality  <br />with Innovative Design</p>
+                    <p class='display-1 fw-bold text-white' data-aos="fade-up">Turning  <span class='text-danger'>Vision</span>  into Reality  <br />with Innovative Design</p>
                 </div>
             </div>
 
@@ -27,7 +34,7 @@ const ArchitecturalServices = () => {
                         <ul class='fs-5 fw-normal'>
                             <li>Crafting innovative and personalized architectural plans that align with your vision. </li>
                             <li>Offering modern, traditional, and bespoke designs tailored to your requirements. </li>
-                            <li>Balancing aesthetics and practicality to create spaces that are both beautiful and functional. </li> 
+                            <li>Balancing aesthetics and practicality to create spaces that are both beautiful and functional. </li>
                         </ul>
                     </li>
 
@@ -35,7 +42,7 @@ const ArchitecturalServices = () => {
                         <ul class='fs-5 fw-normal'>
                             <li>Designing interiors that enhance the comfort and appeal of your space. </li>
                             <li>Choosing the perfect blend of colors, textures, and furniture to match your style. </li>
-                            <li>Focused on creating harmonious spaces that inspire and uplift. </li> 
+                            <li>Focused on creating harmonious spaces that inspire and uplift. </li>
                         </ul>
                     </li>
 
@@ -43,7 +50,7 @@ const ArchitecturalServices = () => {
                         <ul class='fs-5 fw-normal'>
                             <li>Planning and designing outdoor spaces that blend seamlessly with your property. </li>
                             <li>Incorporating greenery, pathways, lighting, and water features for a serene environment. </li>
-                            <li>Creating sustainable landscapes that are both eco-friendly and visually appealing. </li> 
+                            <li>Creating sustainable landscapes that are both eco-friendly and visually appealing. </li>
                         </ul>
                     </li>
 
@@ -51,7 +58,7 @@ const ArchitecturalServices = () => {
                         <ul class='fs-5 fw-normal'>
                             <li>Reimagining existing spaces to enhance functionality and style. </li>
                             <li>Providing expert consultation on structural modifications and aesthetic improvements. </li>
-                            <li>Turning outdated spaces into modern masterpieces. </li> 
+                            <li>Turning outdated spaces into modern masterpieces. </li>
                         </ul>
                     </li>
 
@@ -59,7 +66,7 @@ const ArchitecturalServices = () => {
                         <ul class='fs-5 fw-normal'>
                             <li>Using advanced 3D modeling and rendering tools to provide a realistic preview of the project. </li>
                             <li>Allowing clients to visualize every detail before construction begins. </li>
-                            <li>Ensuring complete alignment between the client’s expectations and the final design. </li> 
+                            <li>Ensuring complete alignment between the client’s expectations and the final design. </li>
                         </ul>
                     </li>
                 </ul>
@@ -81,12 +88,12 @@ const ArchitecturalServices = () => {
             </div>
 
             <div class='col-11 m-auto mt-4 text-start'>
-         
-                    <p class='fs-2 fw-bold' data-aos="fade-up"> Transforming Spaces, One Design at a Time</p>
-                    <p class='fs-5' data-aos="fade-up">At May I Services, we believe that great design has the power to inspire and uplift. Our architectural and designing services are crafted to turn your dream spaces into reality, with attention to every detail and a commitment to quality.</p>
+
+                <p class='fs-2 fw-bold' data-aos="fade-up"> Transforming Spaces, One Design at a Time</p>
+                <p class='fs-5' data-aos="fade-up">At May I Services, we believe that great design has the power to inspire and uplift. Our architectural and designing services are crafted to turn your dream spaces into reality, with attention to every detail and a commitment to quality.</p>
             </div>
 
-            <SubContact/>
+            <SubContact />
 
         </div>
     )

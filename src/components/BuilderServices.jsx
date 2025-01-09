@@ -2,16 +2,23 @@ import React, { useEffect } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SubContact from './SubContact'
+import { Helmet } from 'react-helmet';
 
 const BuilderServices = () => {
-       useEffect(() => {
-              AOS.init({ duration: 2000 });
-          }, [])
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, [])
     return (
         <div>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Builder - May i Services</title>
+                <meta name="description" content="'May I Services' provides guidance and services in three key areas: real estate, economical clothing, and healthy food." />
+                <meta name="keywords" content="real estate, BuilderServices" />
+            </Helmet>
             <div style={{ height: '100vh', backgroundImage: `url(${require('../image/builder.png')})`, backgroundPosition: "center", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
                 <div class='d-flex align-items-center justify-content-center' style={{ width: '100%', height: '100%', background: 'rgba(0,0,0,0.7)' }}>
-                    <p class='display-1 fw-bold text-white'  data-aos="fade-up">Building Your  <span class='text-danger'>Dreams</span> <br />with Expertise and Precision</p>
+                    <p class='display-1 fw-bold text-white' data-aos="fade-up">Building Your  <span class='text-danger'>Dreams</span> <br />with Expertise and Precision</p>
                 </div>
             </div>
 
@@ -81,12 +88,12 @@ const BuilderServices = () => {
             </div>
 
             <div class='col-11 m-auto mt-4 text-start'>
-         
-                    <p class='fs-2 fw-bold' data-aos="fade-up"> Our Commitment to Excellence</p>
-                    <p class='fs-5' data-aos="fade-up">At May I Services, we aim to make the construction process smooth and stress-free for our clients. Whether it’s building a new home, renovating an existing space, or creating a commercial property, our dedication to quality and customer satisfaction is unwavering.</p>
+
+                <p class='fs-2 fw-bold' data-aos="fade-up"> Our Commitment to Excellence</p>
+                <p class='fs-5' data-aos="fade-up">At May I Services, we aim to make the construction process smooth and stress-free for our clients. Whether it’s building a new home, renovating an existing space, or creating a commercial property, our dedication to quality and customer satisfaction is unwavering.</p>
             </div>
 
-            <SubContact/>
+            <SubContact />
 
         </div>
     )
