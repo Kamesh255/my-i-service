@@ -24,7 +24,7 @@ const Contact = () => {
                 <div class='col-md-6'>
                     <div class='col-11 m-auto text-start'>
                         <p class='fs-4 fw-semibold'>Address :</p>
-                        <p class='fs-5'>Ground Floor SR. MIG 12 E - 3 Arera Colony Bhopal 462016</p>
+                        <p class='fs-5'>Ground Floor E-3/12 Sr. MIG Arera Colony, Bhopal, 462016</p>
                         <p class='fs-4 fw-semibold mt-2'>Mobile :</p>
                         <p class='fs-5'><a href='tel:+919407508822' style={{ textDecoration: 'none' }}>+91 94075 08822</a></p>
                         <p class='fs-4 fw-semibold mt-2'>Mail :</p>

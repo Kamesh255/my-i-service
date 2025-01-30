@@ -39,7 +39,7 @@ const Footer = () => {
                         <p class='fs-5 col-12'><b>Menu</b></p>
                         <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/')}>Home</p>
                         <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/about-us')}>About</p>
-                        <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/services')}>Service</p>
+                        <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/services')}>Services</p>
                         <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/projects')}>Projects</p> 
                         <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/contact-us')}>Contact Us</p> 
                         <p class='mt-1 col-6' style={{cursor:'pointer'}} onClick={()=>navigate('/real-estate')}>Real Estate </p>
@@ -56,7 +56,7 @@ const Footer = () => {
                     <br />
                     <div class='col-11 m-auto text-start lmg'>
                         <p class='fs-5'><b>Address </b></p>
-                        <p class=''>Ground Floor SR. MIG 12 E - 3 Arera Colony Bhopal 462016</p>
+                        <p class=''>Ground Floor E-3/12 Sr. MIG Arera Colony, Bhopal, 462016</p>
 
                         <p class='fs-5 mt-2'><b>Mobile </b></p>
                         <p class=''><a href='tel:+9194075 08822' style={{textDecoration:'none'}}>+91 94075 08822</a></p>

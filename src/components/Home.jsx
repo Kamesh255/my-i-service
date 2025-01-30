@@ -14,11 +14,11 @@ const slider = [
   },
   {
     image: `${require('../image/cloth.png')}`,
-    title: "  Economical Clothing Service",
+    title: "  Economical Clothing Services",
     text: "Trendy fashion at budget-friendly prices."
   }, {
     image: `${require('../image/food2.png')}`,
-    title: "Food Service",
+    title: "Food Services",
     text: "Organic, hygienic, and nutritious meals."
   },
 ]
@@ -50,15 +50,15 @@ const Home = () => {
 
           </div>
           {/* <MisSvg  /> */}
-          <p class='lmg fs-1 fw-semibold' >May <span class='fw-bold' style={{ color: 'red' }}>i</span>  Services</p>
+          <h  class='lmg fs-1 fw-semibold' >May <span class='fw-bold' style={{ color: 'red' }}>i</span>  Services</h>
         </div>
       </div>
 
       <div class='col-11 m-auto row align-items-center mt-5 gap-md-0 gap-4'>
         <div class='col-md-6'>
           <div class='col-11 m-auto text-start'>
-            <p class='fw-semibold fs-1 ' data-aos="fade-up">Welcome to May i Service</p>
-            <p data-aos="fade-up">At <b>May i Service</b>, we are committed to making your real estate journey smooth and rewarding. Whether you’re buying, selling, or investing, our team of experts is here to guide you with personalized solutions tailored to your needs. With years of experience and a deep understanding of the market, we’ve built a reputation for delivering results that exceed expectations.</p>
+            <p class='fw-semibold fs-1 ' data-aos="fade-up">Welcome to May i Services</p>
+            <p data-aos="fade-up">At <b>May i Services</b>, we are committed to making your real estate journey smooth and rewarding. Whether you’re buying, selling, or investing, our team of experts is here to guide you with personalized solutions tailored to your needs. With years of experience and a deep understanding of the market, we’ve built a reputation for delivering results that exceed expectations.</p>
             <button class='btn btn-outline-dark rounded-5 mt-3' data-aos="fade-up" onClick={()=>navigate('/about-us')} >Know More</button>
 
           </div>
@@ -104,7 +104,7 @@ const Home = () => {
           <div class='col-11 m-auto text-start'>
             <br />
             <p class='lmg fs-1 fw-semibold' data-aos="fade-up">
-              Why May <span style={{ color: 'red' }}>i</span> Service
+              Why May <span style={{ color: 'red' }}>i</span> Services
             </p>
             <ul class='lmg fs-5'>
               <li class='mt-2' data-aos="fade-up"><b>Affordable Solutions:</b> We believe in delivering value without compromising quality.</li>

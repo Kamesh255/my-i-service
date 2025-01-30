@@ -4,7 +4,7 @@ import 'aos/dist/aos.css';
 import SubContact from './SubContact'
 import { Helmet } from 'react-helmet';
 
-const FoodService = () => {
+const FoodServices = () => {
     useEffect(() => {
         AOS.init({ duration: 2000 });
     }, [])
@@ -63,7 +63,7 @@ const FoodService = () => {
                         <ul class='fs-5 fw-normal'>
                             <li> Tailored catering solutions for events, parties, and corporate gatherings. </li>
                             <li> A variety of menu options, from traditional to modern cuisines. </li>
-                            <li>Personalized service to meet the unique needs of your event.  </li>
+                            <li>Personalized services to meet the unique needs of your event.  </li>
 
 
                         </ul>
@@ -73,7 +73,7 @@ const FoodService = () => {
                         <ul class='fs-5 fw-normal'>
                             <li> Freshly prepared meals delivered straight to your doorstep. </li>
                             <li>Temperature-controlled packaging to preserve freshness and flavor.  </li>
-                            <li>Timely service for both individual orders and bulk deliveries.  </li>
+                            <li>Timely services for both individual orders and bulk deliveries.  </li>
                         </ul>
                     </li>
 
@@ -107,4 +107,4 @@ const FoodService = () => {
     )
 }
 
-export default FoodService
+export default FoodServices

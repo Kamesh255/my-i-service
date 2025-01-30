@@ -57,7 +57,7 @@ const AboutUs = () => {
                         <div class='col-11 m-auto text-start lmg'>
                             <br />
                             <p class='fs-1  fw-bold'>Vision</p>
-                            <p class='fs-5'>We envision becoming a leading multi-service provider known for excellence, sustainability, and customer satisfaction. By embracing innovation and setting new standards, we aim to make high-quality services accessible, empowering individuals and communities to thrive.</p>
+                            <p class='fs-5'>We envision becoming a leading multi-services provider known for excellence, sustainability, and customer satisfaction. By embracing innovation and setting new standards, we aim to make high-quality services accessible, empowering individuals and communities to thrive.</p>
                             <br />
                         </div>
                     </div>
@@ -83,7 +83,7 @@ const AboutUs = () => {
             </div>
 
             <div class='col-10 m-auto mt-5'>
-                <p class='fs-5 tjustify fw-semibold' data-aos="fade-up">At May I Services, customer satisfaction is at the heart of everything we do. Our vision is to establish ourselves as a reliable, trustworthy, and innovative service provider, helping you make informed decisions for a better future. Join us in experiencing a blend of expertise, affordability, and quality like never before.
+                <p class='fs-5 tjustify fw-semibold' data-aos="fade-up">At May I Services, customer satisfaction is at the heart of everything we do. Our vision is to establish ourselves as a reliable, trustworthy, and innovative services provider, helping you make informed decisions for a better future. Join us in experiencing a blend of expertise, affordability, and quality like never before.
                 </p>
             </div>
 
