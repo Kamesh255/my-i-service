@@ -1,0 +1,392 @@
+
+internal API response Data
+{
+  "status": "true",
+  "message": "Data fetched successfully",
+  "data": {
+    "metaData": {
+      "pageTitle": "Page Title",
+      "pageDescription": "This is a description of the page.",
+      "pageKeyword": "Page Keyword"
+    },
+    "PageData": {
+      "peraDescription": {
+        "title": "Welcome to May i Services",
+        "description": "<p>Discover convenience at your fingertips with <b> May i Services <b/>- your all-in-one solution for realestate, food, and clothing services. Whether you're searching for your dream home, craving a delicious meal, or looking to upgrade your wardrobe, we've got you covered. Our platform connects you with trusted providers, personalized recommendations, and seamless ordering - all in one easy-to-use app. Save time, simplify your life, and experience the best of home, taste, and style in a single tap.<p/>",
+        "buttonText": "Know More",
+        "buttonLink": "#"
+      },
+      "infoCartsPhoto": [
+        {
+          "title": "Real Estate",
+          "description": "<p>Find your dream home with our real estate services.<p/>",
+          "image": "https://example.com/real-estate.jpg",
+          "btn1text": "Know More",
+          "btn1link": "#",
+          "btn2text": "Contact Us",
+          "btn2link": "#"
+        },
+        {
+          "title": "Food Delivery",
+          "description": "<p>Find your dream home with our real estate services.<p/>",
+          "image": "https://example.com/real-estate.jpg",
+          "btn1text": "Know More",
+          "btn1link": "#",
+          "btn2text": "Contact Us",
+          "btn2link": "#"
+        },
+        {
+          "title": "Clothing Store",
+          "description": "<p>Find your dream home with our real estate services.<p/>",
+          "image": "https://example.com/real-estate.jpg",
+          "btn1text": "Know More",
+          "btn1link": "#",
+          "btn2text": "Contact Us",
+          "btn2link": "#"
+        }
+      ],
+      "infoCartsBgPhoto": [
+        {
+          "title": "Real Estate",
+          "description": "<p>Find your dream home with our real estate services.<p/>",
+          "image": "https://example.com/real-estate.jpg",
+          "btn1text": "Know More",
+          "btn1link": "#",
+          "btn2text": "Contact Us",
+          "btn2link": "#"
+        },
+        {
+          "title": "Food Delivery",
+          "description": "<p>Find your dream home with our real estate services.<p/>",
+          "image": "https://example.com/real-estate.jpg",
+          "btn1text": "Know More",
+          "btn1link": "#",
+          "btn2text": "Contact Us",
+          "btn2link": "#"
+        },
+        {
+          "title": "Clothing Store",
+          "description": "<p>Find your dream home with our real estate services.<p/>",
+          "image": "https://example.com/real-estate.jpg",
+          "btn1text": "Know More",
+          "btn1link": "#",
+          "btn2text": "Contact Us",
+          "btn2link": "#"
+        }
+      ],
+      "whyUse": {
+        "title": "Why Use May i Services?",
+        "description": "<p>Find your dream home with our real estate services.<p/>",
+        "image": "https://example.com/real-estate.jpg",
+        "btntext": "Know More",
+        "btnlink": "#"
+      },
+      "plan":"true/false",
+      "testimonials": {
+        "title": "What Our Customers Say",
+        "description": "<p>Find your dream home with our real estate services.<p/>",
+        "cartsDetails": [
+          {
+            "name": "Mr. R. Dixit",
+            "role": "Service User",
+            "message": "May I Services has made my projects smoother than ever. From legal opinion and guidance to finding reliable vendors, everything is at my fingertips. A must-have tool for any builder who values time and quality!"
+          },
+          {
+            "name": "Mr. Dixit",
+            "role": "Architect",
+            "message": "As a developer, I needed fast, trustworthy service connections — and May I Services delivered beyond expectations. Real estate solutions, food, clothing — all managed beautifully through one app!"
+          },
+          {
+            "name": "Mr. Patidar",
+            "role": "Stakeholder",
+            "message": "May I Services has added incredible value to our projects. Their seamless integration of services saves us time and boosts efficiency. It's a game-changer for all stakeholders involved in real estate and lifestyle management."
+          },
+          {
+            "name": "Mr. Singh",
+            "role": "Architect",
+            "message": "Designing dreams requires reliable partners. Thanks to May I Services, I can focus more on my creative work, knowing the rest — from real estate needs to lifestyle essentials — is handled with care."
+          },
+          {
+            "name": "Mrs. Meena",
+            "role": "Architect",
+            "message": "May I Services is a brilliant support system for professionals like me. Whether it's coordinating with service providers or handling last-minute client needs, the app simplifies everything with just a few taps."
+          },
+          {
+            "name": "Mr. Dixit",
+            "role": "Service User",
+            "message": "Using May I Services has truly simplified my busy life. Finding a new apartment, ordering a meal, or upgrading my wardrobe — it's all easy, quick, and reliable. Highly recommended for anyone looking to save time!"
+          },
+          {
+            "name": "Mr. Shakya",
+            "role": "Service User",
+            "message": "What impressed me most about May I Services is the personalized touch. Their recommendations are spot-on, and the process is seamless. It’s my go-to app for anything real estate, food, and fashion!"
+          },
+          {
+            "name": "Mr. Ansari",
+            "role": "Contractor",
+            "message": "Managing multiple projects used to be stressful, but May I Services made it so much easier. From finding reliable suppliers to organizing services on-site, everything is now streamlined. It's an essential tool for any contractor who values speed, quality, and organization."
+          },
+          {
+            "name": "Mr. Bagga",
+            "role": "Investor",
+            "message": "Investing is all about smart decisions, and choosing May I Services was one of them. Their wide range of trusted service providers and easy navigation make them a reliable partner in today's fast-paced market."
+          },
+          {
+            "name": "Mr. Ansari",
+            "role": "Service User",
+            "message": "May I Services has completely changed the way I manage my daily needs. From finding the perfect home to ordering my favorite meals, everything is now just a tap away. The convenience and reliability are unmatched!"
+          },
+          {
+            "name": "Mr. Sharma",
+            "role": "Developer",
+            "message": "Managing different vendors was always a hassle — until I started using May I Services. Now, everything I need for my projects, plus personal essentials, is accessible in one efficient platform. Brilliant!"
+          }
+        ]
+      },
+      "blueCartInfo": {
+        "title": "May I Services",
+        "description": "<p>Find your dream home with our real estate services.<p/>",
+        "btntext": "Know More",
+        "btnlink": "#"
+      },
+      "greenCartInfo": {
+        "title": "May I Services",
+        "description": "<p>Find your dream home with our real estate services.<p/>",
+        "btntext": "Know More",
+        "btnlink": "#"
+      },
+      "meroonCartInfo": {
+        "title": "May I Services",
+        "description": "<p>Find your dream home with our real estate services.<p/>",
+        "btntext": "Know More",
+        "btnlink": "#"
+      },
+      "BlueBorderCartInfo": {
+        "title": "May I Services",
+        "description": "<p>Find your dream home with our real estate services.<p/>",
+        "btntext": "Know More",
+        "btnlink": "#"
+      },
+      "topBanner": {
+        "title": "May I Services",
+        "description": "<p>Find your dream home with our real estate services.<p/>",
+        "btntext": "Know More",
+        "btnlink": "#",
+        "bachgroundImg":"url"
+      },
+      "imageGallery":[
+        "https://example.com/image1.jpg",
+        "https://example.com/image2.jpg",
+        "https://example.com/image3.jpg",
+        "https://example.com/image4.jpg",
+        "https://example.com/image5.jpg",
+        "https://example.com/image6.jpg",
+        "https://example.com/image7.jpg",
+        "https://example.com/image8.jpg"
+      ],
+      "videoGallery":[
+        "https://example.com/video1.mp4",
+        "https://example.com/video2.mp4",
+        "https://example.com/video3.mp4",
+        "https://example.com/video4.mp4",
+        "https://example.com/video5.mp4",
+        "https://example.com/video6.mp4"
+      ],
+      "contactus": {
+        "title": "Contact Us",
+        "description": "<p>Address: <br/> <p>Ground Floor E-3/12 Sr. MIG Arera Colony, Bhopal, 462016<p/><p/>",
+        "mapLink": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14667.158771957515!2d77.42738923698816!3d23.214333733763237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c431ae546e701%3A0x35086dba3e4dce98!2sMay%20I%20Services!5e0!3m2!1sen!2sin!4v1735704111733!5m2!1sen!2sin",
+      },
+    }
+  }
+}
+
+header API response Data
+{
+    "success": true,
+    "message": "Navbar detail successful",
+    "data": [
+      {
+        "id": 1,
+        "name": "Home",
+        "url": "\/",
+        "submenu": []
+      },
+      {
+        "id": 2,
+        "name": "About Us",
+        "url": "about-us",
+        "submenu": []
+      },
+      {
+        "id": 3,
+        "name": "Services",
+        "url": "services",
+        "submenu": [
+          {
+            "id": 6,
+            "name": "Real Estate",
+            "url": "real-estate",
+            "chaildmenu": [
+              {
+                "id": 1,
+                "name": "Builder Services",
+                "url": "builder-services",
+              },
+              {
+                "id": 2,
+                "name": "Architectural Services",
+                "url": "architectural-services",
+              },
+            ]
+          },
+          {
+            "id": 7,
+            "name": "Clothing",
+            "url": "clothing",
+            "chaildmenu": [
+              {
+                "id": 1,
+                "name": "Online fashion",
+                "url": "online-fashion",
+              },
+            ]
+          },
+          {
+            "id": 8,
+            "name": "Food",
+            "url": "food",
+            "chaildmenu": [
+              {
+                "id": 1,
+                "name": "Healthy and hygienic",
+                "url": "healthy-food",
+              },
+            ]
+          },
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Projects",
+        "url": "projects",
+        "submenu": []
+      },
+      {
+        "id": 5,
+        "name": "Contact Us",
+        "url": "contact-us",
+        "submenu": []
+      },
+    ]
+  }
+
+
+footer API responce data
+{
+    "success": true,
+    "message": "Navbar detail successful",
+    "data": {
+        "footerlogo": "https://mayiservices.in/assets/images/logo.png",
+        "socialmedia": [
+            {
+                "id": 1,
+                "name": "Instagram",
+                "url": "https://www.instagram.com/mayiservices.in",
+            },
+            {
+                "id": 2,
+                "name": "Facebook",
+                "url": "https://www.facebook.com/profile.php?id=61568218448512&mibextid=ZbWKwL",
+            },
+            {
+                "id": 3,
+                "name": "Twitter",
+                "url": "https://x.com/mayiservices",
+            },
+            {
+                "id": 4,
+                "name": "Youtube",
+                "url": "https://youtube.com/@mayiservices",
+            },
+            {
+                "id": 5,
+                "name": "Linkedin",
+                "url": "https://www.linkedin.com/company/mayiservices",
+            },
+        ],
+        "menu": {
+            "title": "Menu",
+            "items": [
+                {
+                    "id": 1,
+                    "name": "Home",
+                    "url": "/",
+                },
+                {
+                    "id": 2,
+                    "name": "About Us",
+                    "url": "/about-us",
+                },
+                {
+                    "id": 3,
+                    "name": "Services",
+                    "url": "/services",
+                },
+                {
+                    "id": 4,
+                    "name": "Projects",
+                    "url": "/projects",
+                },
+                {
+                    "id": 5,
+                    "name": "Contact Us",
+                    "url": "/contact-us",
+                },
+            ]
+        },
+        "ourproducts": {
+            "title": "Our Products",
+            "items": [
+                {
+                    "id": 1,
+                    "name": "Real Estate",
+                    "url": "/real-estate",
+                },
+                {
+                    "id": 2,
+                    "name": "Clothing",
+                    "url": "/clothing",
+                },
+                {
+                    "id": 3,
+                    "name": "Food",
+                    "url": "/food",
+                },
+            ]
+        },
+        "getintouch": {
+            "title": "Get In Touch",
+            "items": [
+                {
+                    "id": 1,
+                    "name": "Address",
+                    "url": "/",
+                    "value": "Ground Floor E-3/12 Sr. MIG Arera Colony, Bhopal, 462016"
+                },
+                {
+                    "id": 2,
+                    "name": "Mobile",
+                    "url": "/",
+                    "value": "+91 94075 08822"
+                },
+                {
+                    "id": 3,
+                    "name": "Mail",
+                    "url": "/",
+                    "value": "mayiservisec@gmail.com"
+                }
+            ]
+        }
+    },
+}

@@ -33,7 +33,75 @@ const Contact = () => {
                     </div>
                 </div>
                 <div class='col-md-6 p-0 m-0'>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14667.158771957515!2d77.42738923698816!3d23.214333733763237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c431ae546e701%3A0x35086dba3e4dce98!2sMay%20I%20Services!5e0!3m2!1sen!2sin!4v1735704111733!5m2!1sen!2sin" class='rounded-4' height="320" style={{ border: '0', width: '100%' }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14667.158771957515!2d77.42738923698816!3d23.214333733763237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c431ae546e701%3A0x35086dba3e4dce98!2sMay%20I%20Services!5e0!3m2!1sen!2sin!4v1735704111733!5m2!1sen!2sin" class='rounded-4' height="500" style={{ border: '0', width: '100%' }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div data-aos="zoom-up-in" class='col-11 m-auto row justify-content-center align-items-center flex-column-reverse flex-md-row rounded-4 my-5 bgdmg lmg' style={{ border: '3px solid #082b31' }}>
+                <div class='col-md-6'>
+                    <div class='col-11 m-auto text-start'>
+                        <p class='fs-4 fw-semibold'>Address :</p>
+                        <p class='fs-5'>Ground Floor E-3/12 Sr. MIG Arera Colony, Bhopal, 462016</p>
+                        <p class='fs-4 fw-semibold mt-2'>Mobile :</p>
+                        <p class='fs-5'><a href='tel:+919407508822' style={{ textDecoration: 'none' }}>+91 94075 08822</a></p>
+                        <p class='fs-4 fw-semibold mt-2'>Mail :</p>
+                        <p class='fs-5'><a href='mailto:mayiservices@gmail.com' style={{ textDecoration: 'none' }}>mayiservices@gmail.com</a> </p>
+
+                    </div>
+                </div>
+                <div class='col-md-6 p-0 m-0'>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14667.158771957515!2d77.42738923698816!3d23.214333733763237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c431ae546e701%3A0x35086dba3e4dce98!2sMay%20I%20Services!5e0!3m2!1sen!2sin!4v1735704111733!5m2!1sen!2sin" class='rounded-4' height="500" style={{ border: '0', width: '100%' }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div data-aos="zoom-up-in" class='col-11 m-auto row justify-content-center align-items-center flex-column-reverse flex-md-row rounded-4 my-5 bgdmg lmg' style={{ border: '3px solid #082b31' }}>
+                <div class='col-md-6'>
+                    <div class='col-11 m-auto text-start'>
+                        <p class='fs-4 fw-semibold'>Address :</p>
+                        <p class='fs-5'>Ground Floor E-3/12 Sr. MIG Arera Colony, Bhopal, 462016</p>
+                        <p class='fs-4 fw-semibold mt-2'>Mobile :</p>
+                        <p class='fs-5'><a href='tel:+919407508822' style={{ textDecoration: 'none' }}>+91 94075 08822</a></p>
+                        <p class='fs-4 fw-semibold mt-2'>Mail :</p>
+                        <p class='fs-5'><a href='mailto:mayiservices@gmail.com' style={{ textDecoration: 'none' }}>mayiservices@gmail.com</a> </p>
+
+                    </div>
+                </div>
+                <div class='col-md-6 p-0 m-0'>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14667.158771957515!2d77.42738923698816!3d23.214333733763237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c431ae546e701%3A0x35086dba3e4dce98!2sMay%20I%20Services!5e0!3m2!1sen!2sin!4v1735704111733!5m2!1sen!2sin" class='rounded-4' height="500" style={{ border: '0', width: '100%' }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div data-aos="zoom-up-in" class='col-11 m-auto row justify-content-center align-items-center flex-column-reverse flex-md-row rounded-4 my-5 bgdmg lmg' style={{ border: '3px solid #082b31' }}>
+                <div class='col-md-6'>
+                    <div class='col-11 m-auto text-start'>
+                        <p class='fs-4 fw-semibold'>Address :</p>
+                        <p class='fs-5'>Ground Floor E-3/12 Sr. MIG Arera Colony, Bhopal, 462016</p>
+                        <p class='fs-4 fw-semibold mt-2'>Mobile :</p>
+                        <p class='fs-5'><a href='tel:+919407508822' style={{ textDecoration: 'none' }}>+91 94075 08822</a></p>
+                        <p class='fs-4 fw-semibold mt-2'>Mail :</p>
+                        <p class='fs-5'><a href='mailto:mayiservices@gmail.com' style={{ textDecoration: 'none' }}>mayiservices@gmail.com</a> </p>
+
+                    </div>
+                </div>
+                <div class='col-md-6 p-0 m-0'>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14667.158771957515!2d77.42738923698816!3d23.214333733763237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c431ae546e701%3A0x35086dba3e4dce98!2sMay%20I%20Services!5e0!3m2!1sen!2sin!4v1735704111733!5m2!1sen!2sin" class='rounded-4' height="500" style={{ border: '0', width: '100%' }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div data-aos="zoom-up-in" class='col-11 m-auto row justify-content-center align-items-center flex-column-reverse flex-md-row rounded-4 my-5 bgdmg lmg' style={{ border: '3px solid #082b31' }}>
+                <div class='col-md-6'>
+                    <div class='col-11 m-auto text-start'>
+                        <p class='fs-4 fw-semibold'>Address :</p>
+                        <p class='fs-5'>Ground Floor E-3/12 Sr. MIG Arera Colony, Bhopal, 462016</p>
+                        <p class='fs-4 fw-semibold mt-2'>Mobile :</p>
+                        <p class='fs-5'><a href='tel:+919407508822' style={{ textDecoration: 'none' }}>+91 94075 08822</a></p>
+                        <p class='fs-4 fw-semibold mt-2'>Mail :</p>
+                        <p class='fs-5'><a href='mailto:mayiservices@gmail.com' style={{ textDecoration: 'none' }}>mayiservices@gmail.com</a> </p>
+
+                    </div>
+                </div>
+                <div class='col-md-6 p-0 m-0'>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14667.158771957515!2d77.42738923698816!3d23.214333733763237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c431ae546e701%3A0x35086dba3e4dce98!2sMay%20I%20Services!5e0!3m2!1sen!2sin!4v1735704111733!5m2!1sen!2sin" class='rounded-4' height="500" style={{ border: '0', width: '100%' }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>

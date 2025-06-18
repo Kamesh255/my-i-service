@@ -1,0 +1,411 @@
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import './DaynamicPage.css';
+import ReactPlayer from 'react-player';
+
+const DaynamicPage = () => {
+    const { id } = useParams();
+    const location = useLocation();
+    const value = location?.state;
+    const [getApiData, setGetApiData] = useState();
+    const [homeData, setHomeData] = useState([]); // Initialize as an empty array
+    const [imageCart, setImageCart] = useState([]);
+    const [backgroundImageCart, setBackgroundImageCart] = useState([]);
+    const [imageSlider, setImageSlider] = useState([]);
+    const [videoSlider, setVideoSlider] = useState([]);
+    const [testimonial, setTestimonial] = useState([]);
+    const navigate = useNavigate();
+
+    const getData = (id) => {
+        axios.post(`https://backend.mayiservicespvtltd.com/api/page.php?slug=getSections&menu_id=${id}`)
+            .then((res) => {
+                if (res.data.status) {
+                    setGetApiData(res?.data?.data);
+                }
+            })
+            .catch((err) => {
+                setGetApiData([]); // Set to empty array on error
+            });
+    };
+
+    useEffect(() => {
+        getData(id);
+    }, [id]);
+
+    useEffect(() => {
+        if (getApiData) {
+            setHomeData(getApiData);
+
+            // Filter and set the unique sections
+            const imageCarts = Array.isArray(getApiData) ? getApiData.filter((item) => item?.section_type === "imageCart") : [];
+            const backgroundImageCarts = Array.isArray(getApiData) ? getApiData.filter((item) => item?.section_type === "backgroundImageCart") : [];
+            const imageSliders = Array.isArray(getApiData) ? getApiData.filter((item) => item?.section_type === "imageSlider") : [];
+            const videoSliders = Array.isArray(getApiData) ? getApiData.filter((item) => item?.section_type === "videoSlider") : [];
+            const testimonials = Array.isArray(getApiData) ? getApiData.filter((item) => item?.section_type === "testimonial") : [];
+
+            setImageCart(imageCarts);
+            setBackgroundImageCart(backgroundImageCarts);
+            setImageSlider(imageSliders);
+            setVideoSlider(videoSliders);
+            setTestimonial(testimonials);
+       
+        }
+    }, [getApiData]);
+
+    useEffect(() => {
+        AOS.init({ duration: 2000 });
+    }, []);
+
+    const pageinterFace = () => {
+        let arr = [];
+        const renderedSectionTypes = new Set(); // To keep track of rendered unique sections
+
+        for (let i = 0; i < homeData?.length; i++) {
+            let sectionType = homeData?.[i]?.section_type;
+            let pageSection = homeData?.[i];
+
+            // Check if this section type should be rendered only once
+            const isUniqueSection = ["imageCart", "backgroundImageCart", "imageSlider", "videoSlider", "testimonial"].includes(sectionType);
+
+            if (isUniqueSection) {
+                // If it's a unique section and hasn't been rendered yet, add it
+                if (!renderedSectionTypes.has(sectionType)) {
+                    // Use the respective state array for these sections
+                    if (sectionType === "imageCart" && imageCart.length > 0) {
+                        arr.push(
+                            <div className='col-11 m-auto row' key="imageCartSection">
+                                {imageCart.map((el, index) => (
+                                    <div className='col-lg-4 col-md-6 mt-4' key={index} data-aos="fade-up">
+                                        <div className='col-11 m-auto bgdmg rounded-4'>
+                                            <div className='p-3'>
+                                                <img src={el?.image || el?.video_url} style={{ width: '100%' }} className='rounded-4' alt="" />
+                                            </div>
+                                            <div className='col-11 m-auto mt-4'>
+                                                {el?.title && <p className='display-5 fw-bold lmg ' data-aos="fade-up">{el?.title}</p>}
+                                                {el?.subtitle && <p className='fs-5 lmg' data-aos="fade-up">{el?.subtitle}</p>}
+                                                {el?.content && <p className='lmg' data-aos="fade-up" dangerouslySetInnerHTML={{ __html: el?.content }}></p>}
+                                                {(el?.button_text1 || el?.button_text2) && (
+                                                    <div className="d-flex m-auto gap-3 align-items-center justify-content-center" data-aos="fade-up">
+                                                        {el?.button_text1 && (
+                                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(el?.button_link1)}> {el.button_text1} </button>
+                                                        )}
+                                                        {el?.button_text2 && (
+                                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(el?.button_link2)}> {el.button_text2} </button>
+                                                        )}
+                                                    </div>
+                                                )}
+                                                <br />
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        );
+                    } else if (sectionType === "backgroundImageCart" && backgroundImageCart.length > 0) {
+                        arr.push(
+                            <div className='col-11 m-auto row' key="backgroundImageCartSection">
+                                {backgroundImageCart.map((el, index) => (
+                                    <div className='col-md-6 p-3' key={index} data-aos="fade-up">
+                                        <div className='rounded-4' style={{ width: '100%', height: "300px", backgroundImage: `url(${el?.image || el?.video_url})`, backgroundPosition: "center", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
+                                            <div className='lmg d-flex align-items-center justify-content-center rounded-4' style={{ width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)' }}>
+                                                <div className='col-11 mt-4'>
+                                                    {el?.title && <p className='display-5 fw-bold lmg ' data-aos="fade-up">{el?.title}</p>}
+                                                    {el?.subtitle && <p className='fs-5 lmg' data-aos="fade-up">{el?.subtitle}</p>}
+                                                    {el?.content && <p className='lmg' data-aos="fade-up" dangerouslySetInnerHTML={{ __html: el?.content }}></p>}
+                                                    {(el?.button_text1 || el?.button_text2) && (
+                                                        <div className="d-flex m-auto gap-3 align-items-center justify-content-center" data-aos="fade-up">
+                                                            {el?.button_text1 && (
+                                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(el?.button_link1)}> {el.button_text1} </button>
+                                                            )}
+                                                            {el?.button_text2 && (
+                                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(el?.button_link2)}> {el.button_text2} </button>
+                                                            )}
+                                                        </div>
+                                                    )}
+                                                    <br />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        );
+                    } else if (sectionType === "testimonial" && testimonial.length > 0) {
+                        arr.push(
+                            <div className="marquee mt-4" key="testimonialSection">
+                                <div className="marquee-content">
+                                    {testimonial.map((el, idx) => (
+                                        <div className="card shadow-lg rounded-4 bglmg " style={{ width: "300px", flex: "0 0 auto" }} key={idx}>
+                                            <div className="card-body">
+                                                <div className='col-11 m-auto mt-4'>
+                                                    {el?.title && <p className='fs-4 fw-bold bgdmg lmg px-3 rounded-3 text-center m-auto' style={{ width: "fit-content" }}>{el?.title}</p>}
+                                                    {el?.subtitle && <p className='fs-5 dmg'>{el?.subtitle}</p>}
+                                                    {el?.content && <p className='lmg' dangerouslySetInnerHTML={{ __html: el?.content }}></p>}
+                                                    {(el?.button_text1 || el?.button_text2) && (
+                                                        <div className="d-flex m-auto gap-3 align-items-center justify-content-center">
+                                                            {el?.button_text1 && (
+                                                                <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => navigate(el?.button_link1)}> {el.button_text1} </button>
+                                                            )}
+                                                            {el?.button_text2 && (
+                                                                <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => navigate(el?.button_link2)}> {el.button_text2} </button>
+                                                            )}
+                                                        </div>
+                                                    )}
+                                                    <br />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        );
+                    } else if (sectionType === "imageSlider" && imageSlider.length > 0) {
+                        arr.push(
+                            <div id="imageCarousel" className="carousel slide mt-5" data-aos="zoom-in-up" data-bs-ride="carousel" key="imageSliderSection">
+                                <div className="carousel-inner">
+                                    {imageSlider.map((el, idx) => (
+                                        <div id='imageGallery' className={idx === 0 ? `carousel-item active` : 'carousel-item'} key={idx}>
+                                            <img src={el?.image || el?.video_url} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="" />
+                                        </div>
+                                    ))}
+                                </div>
+                                <button className="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+                                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span className="visually-hidden">Previous</span>
+                                </button>
+                                <button className="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+                                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span className="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        );
+                    } else if (sectionType === "videoSlider" && videoSlider.length > 0) {
+                        arr.push(
+                            <div id="videoCarousel" className="carousel slide mt-5" data-aos="zoom-in-up" key="videoSliderSection">
+                                <div className="carousel-inner">
+                                    {videoSlider.map((el, idx) => (
+                                        <div className={idx === 0 ? 'carousel-item active' : 'carousel-item'} key={idx}>
+                                            <ReactPlayer
+                                                width="100%"
+                                                height="450px"
+                                                controls={true} // Changed from "false" to true to allow user controls
+                                                url={el?.video_url}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
+                                <button className="carousel-control-prev" type="button" data-bs-target="#videoCarousel" data-bs-slide="prev">
+                                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span className="visually-hidden">Previous</span>
+                                </button>
+                                <button className="carousel-control-next" type="button" data-bs-target="#videoCarousel" data-bs-slide="next">
+                                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span className="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        );
+                    }
+                    renderedSectionTypes.add(sectionType); // Mark this unique section type as rendered
+                }
+            } else {
+                // Render other sections normally
+                if (sectionType === "topHero") {
+                    arr.push(
+                        <div style={{ height: '100vh', backgroundImage: `url(${pageSection?.image || pageSection?.video_url})`, backgroundPosition: "center", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }} key={`topHero-${i}`}>
+                            <div className='d-flex align-items-center justify-content-center' style={{ width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)', zIndex: '1' }}>
+                                <div data-aos="zoom-in">
+                                    {pageSection?.title && <p className='display-1 fw-bold text-white'>{pageSection?.title}</p>}
+                                    {pageSection?.subtitle && <p className='text-white'>{pageSection?.subtitle}</p>}
+                                    {pageSection?.content && <p className='text-white' style={{ color: "white" }} dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
+                                    {(pageSection?.button_text1 || pageSection?.button_text2) && (
+                                        <div className="d-flex m-auto gap-3 align-items-center justify-content-center">
+                                            {pageSection?.button_text1 && (
+                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                            )}
+                                            {pageSection?.button_text2 && (
+                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                            )}
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    );
+                } else if (sectionType === "paragraphDescription") {
+                    arr.push(
+                        <div className='col-11 m-auto mt-4' key={`paragraphDescription-${i}`}>
+                            {pageSection?.title && <p className='display-5 fw-bold dmg ' data-aos="fade-up">{pageSection?.title}</p>}
+                            {pageSection?.subtitle && <p className='fs-5 dmg' data-aos="fade-up">{pageSection?.subtitle}</p>}
+                            {pageSection?.content && <p className='dmg' data-aos="fade-up" dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
+                            {(pageSection?.button_text1 || pageSection?.button_text2) && (
+                                <div className="d-flex m-auto gap-3 align-items-center justify-content-center" data-aos="fade-up">
+                                    {pageSection?.button_text1 && (
+                                        <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                    )}
+                                    {pageSection?.button_text2 && (
+                                        <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                    )}
+                                </div>
+                            )}
+                        </div>
+                    );
+                } else if (sectionType === "whyUse") {
+                    arr.push(
+                        <div className='col-11 m-auto bgdmg rounded-4 row mt-4 flex-column-reverse flex-md-row' key={`whyUse-${i}`}>
+                            <div className='col-md-6'>
+                                <div className='col-11 m-auto text-start my-3'>
+                                    {pageSection?.title && <p className='display-5 fw-bold lmg ' data-aos="fade-up">{pageSection?.title}</p>}
+                                    {pageSection?.subtitle && <p className='fs-5 lmg' data-aos="fade-up">{pageSection?.subtitle}</p>}
+                                    {pageSection?.content && <p className='lmg' data-aos="fade-up" style={{ color: "white" }} dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
+                                    {(pageSection?.button_text1 || pageSection?.button_text2) && (
+                                        <div className="d-flex gap-3 align-items-center " data-aos="fade-up">
+                                            {pageSection?.button_text1 && (
+                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                            )}
+                                            {pageSection?.button_text2 && (
+                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                            )}
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                            <div className='col-md-6 p-0'>
+                                <div className='p-sm-5 p-3'>
+                                    <img className='rounded-4' data-aos="fade-in" src={pageSection?.image || pageSection?.video_url} style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    );
+                } else if (sectionType === "buleCartInfo") {
+                    arr.push(
+                        <div className='col-11 m-auto bgdmg rounded-4 mt-4' data-aos="fade-up" key={`buleCartInfo-${i}`}>
+                            <div className='col-11 m-auto lmg '>
+                                <br />
+                                {pageSection?.title && <p className='display-5 fw-bold '>{pageSection?.title}</p>}
+                                {pageSection?.subtitle && <p className='fs-5 '>{pageSection?.subtitle}</p>}
+                                {pageSection?.content && <p className='' style={{ color: "white" }} dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
+                                {(pageSection?.button_text1 || pageSection?.button_text2) && (
+                                    <div className="d-flex m-auto gap-3 align-items-center justify-content-center">
+                                        {pageSection?.button_text1 && (
+                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                        )}
+                                        {pageSection?.button_text2 && (
+                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                        )}
+                                    </div>
+                                )}
+                                <br />
+                            </div>
+                        </div>
+                    );
+                } else if (sectionType === "greenCartInfo") {
+                    arr.push(
+                        <div className='col-11 m-auto rounded-4 mt-4' data-aos="fade-up" style={{ background: "#1A3E1A" }} key={`greenCartInfo-${i}`}>
+                            <div className='col-11 m-auto lmg '>
+                                <br />
+                                {pageSection?.title && <p className='display-5 fw-bold '>{pageSection?.title}</p>}
+                                {pageSection?.subtitle && <p className='fs-5 '>{pageSection?.subtitle}</p>}
+                                {pageSection?.content && <p className='' style={{ color: "white" }} dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
+                                {(pageSection?.button_text1 || pageSection?.button_text2) && (
+                                    <div className="d-flex m-auto gap-3 align-items-center justify-content-center">
+                                        {pageSection?.button_text1 && (
+                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                        )}
+                                        {pageSection?.button_text2 && (
+                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                        )}
+                                    </div>
+                                )}
+                                <br />
+                            </div>
+                        </div>
+                    );
+                } else if (sectionType === "mahroonCartInfo") {
+                    arr.push(
+                        <div className='col-11 m-auto rounded-4 mt-4' data-aos="zoom-in-up" style={{ background: "#430606" }} key={`mahroonCartInfo-${i}`}>
+                            <div className='col-11 m-auto lmg '>
+                                <br />
+                                {pageSection?.title && <p className='display-5 fw-bold '>{pageSection?.title}</p>}
+                                {pageSection?.subtitle && <p className='fs-5'>{pageSection?.subtitle}</p>}
+                                {pageSection?.content && <p className='' style={{ color: "white" }} dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
+                                {(pageSection?.button_text1 || pageSection?.button_text2) && (
+                                    <div className="d-flex m-auto gap-3 align-items-center justify-content-center">
+                                        {pageSection?.button_text1 && (
+                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                        )}
+                                        {pageSection?.button_text2 && (
+                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                        )}
+                                    </div>
+                                )}
+                                <br />
+                            </div>
+                        </div>
+                    );
+                } else if (sectionType === "borderCartInfo") {
+                    arr.push(
+                        <div className='col-11 m-auto rounded-4 mt-4 ' style={{ border: "5px solid #082b31" }} data-aos="fade-up" key={`borderCartInfo-${i}`}>
+                            <br />
+                            <div className='col-11 m-auto text-start'>
+                                {pageSection?.title && <p className='display-5 fw-bold text-center '>{pageSection?.title}</p>}
+                                {pageSection?.subtitle && <p className='fs-5'>{pageSection?.subtitle}</p>}
+                                {pageSection?.content && <p className='dmg' dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
+                                {(pageSection?.button_text1 || pageSection?.button_text2) && (
+                                    <div className="d-flex mt-0 gap-3">
+                                        {pageSection?.button_text1 && (
+                                            <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                        )}
+                                        {pageSection?.button_text2 && (
+                                            <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                        )}
+                                    </div>
+                                )}
+                                <br />
+                            </div>
+                        </div>
+                    );
+                } else if (sectionType === "contactUs") {
+                    arr.push(
+                        <div data-aos="zoom-up-in" className='col-11 m-auto row justify-content-center align-items-center flex-column-reverse flex-md-row rounded-4 my-5 bgdmg lmg' style={{ border: '3px solid #082b31' }} key={`contactUs-${i}`}>
+                            <div className='col-md-6'>
+                                <div className='col-11 m-auto text-start lmg' style={{ height: '350px', overflowY: 'auto' }}>
+                                    <br />
+                                    {pageSection?.title && <p className='display-5 fw-bold '>{pageSection?.title}</p>}
+                                    {pageSection?.subtitle && <p className='fs-5'>{pageSection?.subtitle}</p>}
+                                    {pageSection?.content && <p className='' style={{ color: "white" }} dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
+                                    {(pageSection?.button_text1 || pageSection?.button_text2) && (
+                                        <div className="d-flex gap-3 align-items-center ">
+                                            {pageSection?.button_text1 && (
+                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                            )}
+                                            {pageSection?.button_text2 && (
+                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                            )}
+                                        </div>
+                                    )}
+                                    <br />
+                                </div>
+                            </div>
+                            <div className='col-md-6 p-0 m-0'>
+                                <iframe src={pageSection?.image || pageSection?.video_url} className='rounded-4' style={{ border: '0', width: '100%', height: '350px' }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    );
+                }
+            }
+        }
+        return arr;
+    };
+
+    return (
+        <div>
+            {pageinterFace()}
+            <br />
+        </div>
+    );
+};
+
+export default DaynamicPage;

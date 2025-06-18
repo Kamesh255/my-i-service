@@ -8,10 +8,10 @@ const SubContact = () => {
       }, [])
       const navigate = useNavigate()
   return (
-    <div class='col-11 m-auto bgdmg rounded-4 my-4' data-aos="fade-up">
+    <div class='col-11 m-auto bgdmg rounded-4 my-4' data-aos="zoom-in-up">
         <br />
-        <div class='col-11 m-auto text-start   lmg '>
-            <p class='fs-2 fw-bold'>Ready to get started? </p>
+        <div class='col-11 m-auto    lmg '>
+            <p class='fs-1 fw-bold'>Ready to get started? </p>
             <p class='fs-4'>  Reach out to us today to explore how <b> May <span class='text-danger'>i</span>  Services</b> can simplify and enhance your life.</p>
             <button class='btn btn-outline-light rounded-5 mt-2' onClick={()=>navigate('/contact-us')}>Contact Us</button>
 
