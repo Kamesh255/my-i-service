@@ -5,9 +5,12 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './DaynamicPage.css';
 import ReactPlayer from 'react-player';
+import NotFound from '../NotFound';
+import ComingSoon from './ComingSoon';
+import Plans from './Plans';
 
 const DaynamicPage = () => {
-    const { id } = useParams();
+    const { url, id } = useParams();
     const location = useLocation();
     const value = location?.state;
     const [getApiData, setGetApiData] = useState();
@@ -24,6 +27,8 @@ const DaynamicPage = () => {
             .then((res) => {
                 if (res.data.status) {
                     setGetApiData(res?.data?.data);
+                } else {
+                    setGetApiData([]); // Set to empty array on error
                 }
             })
             .catch((err) => {
@@ -51,13 +56,16 @@ const DaynamicPage = () => {
             setImageSlider(imageSliders);
             setVideoSlider(videoSliders);
             setTestimonial(testimonials);
-       
+
         }
     }, [getApiData]);
 
     useEffect(() => {
         AOS.init({ duration: 2000 });
     }, []);
+
+    console.log("home", homeData);
+    console.log("getApiData", getApiData);
 
     const pageinterFace = () => {
         let arr = [];
@@ -252,7 +260,12 @@ const DaynamicPage = () => {
                             )}
                         </div>
                     );
-                } else if (sectionType === "whyUse") {
+                }else if (sectionType === "subscriptionCart") {
+                    arr.push(
+                        <Plans/>
+                    )
+                } 
+                else if (sectionType === "whyUse") {
                     arr.push(
                         <div className='col-11 m-auto bgdmg rounded-4 row mt-4 flex-column-reverse flex-md-row' key={`whyUse-${i}`}>
                             <div className='col-md-6'>
@@ -402,7 +415,28 @@ const DaynamicPage = () => {
 
     return (
         <div>
-            {pageinterFace()}
+            {homeData && homeData.length > 0 ?
+                <>
+                    {url == "home" &&
+                        <div class='bgdmg d-flex align-items-center justify-content-center' style={{ height: '100vh' }}>
+                            <div>
+                                <br />
+                                <br /><br />
+                                <div class='col-sm-4 col-7 m-auto position-relative'>
+                                    <img style={{ position: 'absolute', top: '0', left: '0', width: '100%' }} data-aos="fade-down" src={require('../../image/may.png')} alt="" />
+                                    <img style={{ width: '100%' }} src={require('../../image/i.png')} data-aos="zoom-in" alt="" />
+                                    <img style={{ position: 'absolute', top: '0', left: '0', width: '100%' }} data-aos="fade-up" src={require('../../image/services.png')} alt="" />
+
+                                </div>
+                                {/* <MisSvg  /> */}
+                                <h class='lmg fs-1 fw-semibold' >May <span class='fw-bold' style={{ color: 'red' }}>i</span>  Services</h>
+                            </div>
+                        </div>}
+                    {pageinterFace()}</>
+                :
+                <>  <ComingSoon /></>
+            }
+
             <br />
         </div>
     );

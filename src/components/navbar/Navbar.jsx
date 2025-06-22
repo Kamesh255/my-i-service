@@ -150,14 +150,14 @@ const mobileNavbar = () =>
   navData?.map(item => (
     <React.Fragment key={item.id}>
       <div
-        className="d-flex justify-content-between p-1 align-items-center col-11 m-auto"
+        className="d-flex justify-content-between p-1 align-items-center col-11 m-auto" style={{cursor:'pointer'}}
         onClick={() =>
           item.url ? moveMenuPage(item.url, item.id)
                    : moveInternalPage(item.url, item.id)
         }
       >
         <div data-bs-dismiss="offcanvas" aria-label="Close">
-          <p>{item.name}</p>
+          <p >{item.name}</p>
         </div>
 
         {/* toggle icon */}
@@ -245,6 +245,7 @@ const mobileNavbar = () =>
                         }}
                         data-bs-dismiss="offcanvas"
                         aria-label="Close"
+                        style={{ cursor: "pointer" }}
                       >
                         {child.name}
                       </div>

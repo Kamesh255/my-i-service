@@ -190,7 +190,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div class='col-11 m-auto row align-items-center mt-5 gap-md-0 gap-4'>
+      {/* <div class='col-11 m-auto row align-items-center mt-5 gap-md-0 gap-4'>
         <div class=''>
           <div class='col-11 m-auto text-center'>
             <p class='fw-semibold display-5 ' data-aos="fade-up">Welcome to May i Services</p>
@@ -200,7 +200,7 @@ const Home = () => {
           </div>
         </div>
 
-      </div>
+      </div> */}
 
       {/* <div class='col-11 m-auto row align-items-center mt-5 gap-md-0 gap-4'>
         <div class='col-md-6'>
@@ -216,7 +216,7 @@ const Home = () => {
         </div>
       </div> */}
 
-      <div class='col-sm-11 m-auto row align-items-center justify-content-center mt-5 gap-sm-0 gap-4'>
+      {/* <div class='col-sm-11 m-auto row align-items-center justify-content-center mt-5 gap-sm-0 gap-4'>
         {projects?.map?.((el) => {
           return (
             <div class='col-lg-4 col-md-6 col-11'>
@@ -238,9 +238,9 @@ const Home = () => {
             </div>
           )
         })}
-      </div>
+      </div> */}
 
-      <div id="imageCarousel" class="carousel slide mt-5" data-aos="zoom-in-up" data-bs-ride="carousel">
+      {/* <div id="imageCarousel" class="carousel slide mt-5" data-aos="zoom-in-up" data-bs-ride="carousel">
 
         <div class="carousel-inner">
           {
@@ -262,9 +262,9 @@ const Home = () => {
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
+      </div> */}
 
-      <div id="videoCarousel" className="carousel slide mt-5" data-aos="zoom-in-up" >
+      {/* <div id="videoCarousel" className="carousel slide mt-5" data-aos="zoom-in-up" >
         <div className="carousel-inner">
           {
             videoSlider?.map((el, i) => {
@@ -291,7 +291,7 @@ const Home = () => {
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
         </button>
-      </div>
+      </div> */}
 
    
 
@@ -319,7 +319,7 @@ const Home = () => {
           </div>
         </div>
       </div> */}
-
+{/* 
       <div class='col-11 m-auto bgdmg rounded-4 row  mt-5  flex-column-reverse flex-md-row'>
         <div class='col-md-6'>
           <div class='col-11 m-auto text-start'>
@@ -347,11 +347,11 @@ const Home = () => {
           </div>
         </div>
 
-      </div>
+      </div> */}
 
 
 
-      <div class=" mt-5 overflow-hidden">
+      {/* <div class=" mt-5 overflow-hidden">
         <p class=" fs-1 fw-semibold" data-aos="fade-up">Testimonials</p>
 
         <div class="marquee">
@@ -371,10 +371,10 @@ const Home = () => {
             }
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <br />
-      <SubContact />
+      {/* <br />
+      <SubContact /> */}
     </div>
 
   )
