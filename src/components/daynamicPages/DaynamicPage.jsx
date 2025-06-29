@@ -83,12 +83,12 @@ const DaynamicPage = () => {
                     // Use the respective state array for these sections
                     if (sectionType === "imageCart" && imageCart.length > 0) {
                         arr.push(
-                            <div className='col-11 m-auto row' key="imageCartSection">
+                            <div className='col-md-11  m-auto row' key="imageCartSection">
                                 {imageCart.map((el, index) => (
                                     <div className='col-lg-4 col-md-6 mt-4' key={index} data-aos="fade-up">
-                                        <div className='col-11 m-auto bgdmg rounded-4'>
+                                        <div className='col-11 m-auto bgdmg rounded-4 h-100'>
                                             <div className='p-3'>
-                                                <img src={el?.image || el?.video_url} style={{ width: '100%' }} className='rounded-4' alt="" />
+                                                <img src={el?.image || el?.video_url} style={{ width: '100%', height:'250px', objectFit:'cover' }} className='rounded-4' alt="" />
                                             </div>
                                             <div className='col-11 m-auto mt-4'>
                                                 {el?.title && <p className='display-5 fw-bold lmg ' data-aos="fade-up">{el?.title}</p>}
