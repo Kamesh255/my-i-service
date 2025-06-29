@@ -9,8 +9,11 @@ import NotFound from '../NotFound';
 import ComingSoon from './ComingSoon';
 import Plans from './Plans';
 import InstagramEmbed from './InstagramEmbed';
+import Form from './Form';
+import { Helmet } from 'react-helmet';
 
 const DaynamicPage = () => {
+      const { state } = useLocation();
     const { url, id } = useParams();
     const location = useLocation();
     const value = location?.state;
@@ -22,6 +25,10 @@ const DaynamicPage = () => {
     const [videoSlider, setVideoSlider] = useState([]);
     const [testimonial, setTestimonial] = useState([]);
     const navigate = useNavigate();
+
+    
+  const param1 = state?.param1 || ''; // Fallback if not present
+  const param2 = state?.param2 || '';
 
     const getData = (id) => {
         axios.post(`https://backend.mayiservicespvtltd.com/api/page.php?slug=getSections&menu_id=${id}`)
@@ -415,6 +422,26 @@ const DaynamicPage = () => {
 
     return (
         <div style={{ minHeight: '100vh' }}>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{param1 ? `${param1} - May I Services` : 'May I Services'}</title>
+                <meta
+                    name="description"
+                    content={
+                        param2
+                            ? `'May I Services' offers specialized services related to ${param2}.`
+                            : `'May I Services' provides guidance and services in three key areas: real estate, economical clothing, and healthy food.`
+                    }
+                />
+                <meta
+                    name="keywords"
+                    content={
+                        param2
+                            ? `${param2}, services`
+                            : 'real estate, economical clothing, healthy food, Services'
+                    }
+                />
+            </Helmet>
             {homeData && homeData.length > 0 ?
                 <>
                     {url == "home" &&
@@ -456,6 +483,8 @@ const DaynamicPage = () => {
                             </div>
                         </div>
                     </div>
+                    <Form />
+
                 </>
                 :
                 <>  <ComingSoon /></>

@@ -51,18 +51,21 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
-  const moveMenuPage = (url, id) => {
+const moveMenuPage = (url, id, param1, param2) => {
+  if (url !== "#" && url !== 'null') {
+    navigate(`${url}/${id}`, {
+      state: { param1, param2 }
+    });
+  }
+};
 
-    if (url !== "#" && url !== 'null') {
-      navigate(`${url}/${id}`)
-    }
-  };
-
-  const moveInternalPage = (url, id) => {
-    if (url && url !== 'null' && url !== '#') {
-      navigate(`/${url}/${id}`)
-    }
-  };
+const moveInternalPage = (url, id, param1, param2) => {
+  if (url && url !== 'null' && url !== '#') {
+    navigate(`/${url}/${id}`, {
+      state: { param1, param2 }
+    });
+  }
+};
 
 
   const handleCollapseToggle = (nameKey) => {
@@ -82,7 +85,7 @@ const Navbar = () => {
           style={i === 0 ? { marginLeft: '50px', cursor: 'pointer' } : { cursor: 'pointer' }}
           onMouseEnter={() => setShowMenu({ [navItem.id]: true })}
           onMouseLeave={() => setShowMenu({ [navItem.id]: false })}
-          onClick={() => moveMenuPage(navItem.url, navItem.id)}
+          onClick={() => moveMenuPage(navItem.url, navItem.id,navItem.meta_title, navItem.meta_description)}
         >
           <p
             className=""
@@ -112,7 +115,7 @@ const Navbar = () => {
                   style={showSubMenu[menu.id] ? { borderRight: '1px solid #FD5900', color: '#FD5900', cursor: 'pointer', width: '200px' } : { borderRight: '1px solid #FD5900', color: '#1A2B71', width: '200px' }}
                   onMouseEnter={() => setShowSubMenu({ [menu.id]: true })}
                   onMouseLeave={() => setShowSubMenu({ [menu.id]: false })}
-                  onClick={() => moveInternalPage(menu.url, menu.id)}
+                  onClick={() => moveInternalPage(menu.url, menu.id,menu.meta_title, menu.meta_description)}
                 >
                   <p>
                     {menu.name}
@@ -128,7 +131,7 @@ const Navbar = () => {
                             key={idx}
                             onClick={(e) => {
                               e.stopPropagation(); // Important: stop parent click bubbling
-                              moveInternalPage(child.url);
+                              moveInternalPage(child.url, child.id, child.meta_title, child.meta_description);
                             }}
                           >
                             {child.name}
@@ -154,8 +157,8 @@ const Navbar = () => {
         <div
           className="d-flex justify-content-between p-1 align-items-center col-11 m-auto" style={{ cursor: 'pointer' }}
           onClick={() =>
-            item.url ? moveMenuPage(item.url, item.id)
-              : moveInternalPage(item.url, item.id)
+            item.url ? moveMenuPage(item.url, item.id,item.meta_title, item.meta_description)
+              : moveInternalPage(item.url, item.id, item.meta_title, item.meta_description)
           }
         >
           <div data-bs-dismiss="offcanvas" aria-label="Close">
@@ -203,7 +206,7 @@ const Navbar = () => {
                     onMouseLeave={() => setShowSubMenu({ [menu.id]: false })}
                   >
                     <p
-                      onClick={() => moveInternalPage(menu.url, menu.id)}
+                      onClick={() => moveInternalPage(menu.url, menu.id, menu.meta_title, menu.meta_description)}
                       data-bs-dismiss="offcanvas"
                       aria-label="Close"
                       style={{ margin: 0 }}
@@ -242,7 +245,7 @@ const Navbar = () => {
                           key={child.id}
                           onClick={e => {
                             e.stopPropagation();
-                            moveInternalPage(child.url, child.id);
+                            moveInternalPage(child.url, child.id, child.meta_title, child.meta_description);
                           }}
                           data-bs-dismiss="offcanvas"
                           aria-label="Close"
