@@ -27,7 +27,6 @@ const Plans = () => {
     useEffect(() => {
         getPlanData()
     }, [])
-    console.log(plansData);
     useEffect(() => {
         AOS.init({ duration: 2000 });
     }, []);

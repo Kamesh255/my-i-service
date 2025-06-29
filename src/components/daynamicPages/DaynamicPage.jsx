@@ -64,8 +64,7 @@ const DaynamicPage = () => {
         AOS.init({ duration: 2000 });
     }, []);
 
-    console.log("home", homeData);
-    console.log("getApiData", getApiData);
+ 
 
     const pageinterFace = () => {
         let arr = [];
@@ -414,7 +413,7 @@ const DaynamicPage = () => {
     };
 
     return (
-        <div>
+        <div style={{minHeight:'100vh'}}>
             {homeData && homeData.length > 0 ?
                 <>
                     {url == "home" &&

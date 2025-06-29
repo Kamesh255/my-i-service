@@ -9,10 +9,13 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Plans from './components/daynamicPages/Plans';
 import Home from './components/Home';
+import Login from './components/login/Login';
+import Signup from './components/login/Signup';
+import Profile from './components/login/Profile';
 
 function App() {
 
-    const [homePage, setHomePage] = useState(null);
+  const [homePage, setHomePage] = useState(null);
 
   useEffect(() => {
     axios.get('https://backend.mayiservicespvtltd.com/api/menu.php?slug=getAllMenuList') // replace with actual API
@@ -27,19 +30,27 @@ function App() {
     <div className="App">
       <ScrollToTop />
       <Navbar />
-      <Routes>
+      <div style={{ minHeight: '50vh' }}>
+      <Routes >
         {homePage && (
           <Route path="/" element={<Navigate to={`/${homePage.url}/${homePage.id}`} replace />} />
         )}
         <Route path={'/:url/:id'} element={<DaynamicPage />} />
+        <Route path='/log-in' element={<Login />} />
+        <Route path='/sign-up' element={<Signup />} />
+        <Route path='/profile' element={<Profile />} />
+
+
+
         <Route path='*' element={<NotFound />} />
         <Route path='/plans' element={<Plans />} />
 
 
       </Routes>
+      </div>
       <Footer />
 
-    </div>
+    </div >
   );
 }
 

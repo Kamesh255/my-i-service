@@ -4,7 +4,7 @@ import './navbar.css'
 import { FaArrowRightLong } from 'react-icons/fa6';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import axios from 'axios';
- 
+
 
 const Navbar = () => {
   const [navData, setNavData] = useState()
@@ -22,22 +22,24 @@ const Navbar = () => {
   const [idToCollapseChild, setIdToCollapseChild] = useState({});
   const [openSubmenus, setOpenSubmenus] = useState({});
 
+  const user = JSON.parse(localStorage.getItem('mayiservice_user'));
+
 
   const getAllMenuList = () => {
     axios.get("https://backend.mayiservicespvtltd.com/api/menu.php?slug=getAllMenuList")
       .then((res) => {
-        if (res.data.status =="success" || "true") {
+        if (res.data.status == "success" || "true") {
           setNavData(res.data.data)
         }
-      
+
       })
       .catch((err) => {
         console.error(err);
       });
   };
-    useEffect(() => {
-      getAllMenuList()
-    }, [])
+  useEffect(() => {
+    getAllMenuList()
+  }, [])
 
   const toggleSubmenu = (menuId) => {
     setOpenSubmenus((prev) => ({
@@ -56,7 +58,7 @@ const Navbar = () => {
     }
   };
 
-  const moveInternalPage = (url,id) => {
+  const moveInternalPage = (url, id) => {
     if (url && url !== 'null' && url !== '#') {
       navigate(`/${url}/${id}`)
     }
@@ -70,7 +72,7 @@ const Navbar = () => {
     }));
   };
 
-  
+
 
   const PcNavbar = () => {
     return navData?.map((navItem, i) => (
@@ -146,119 +148,118 @@ const Navbar = () => {
   };
 
 
-const mobileNavbar = () =>
-  navData?.map(item => (
-    <React.Fragment key={item.id}>
-      <div
-        className="d-flex justify-content-between p-1 align-items-center col-11 m-auto" style={{cursor:'pointer'}}
-        onClick={() =>
-          item.url ? moveMenuPage(item.url, item.id)
-                   : moveInternalPage(item.url, item.id)
-        }
-      >
-        <div data-bs-dismiss="offcanvas" aria-label="Close">
-          <p >{item.name}</p>
+  const mobileNavbar = () =>
+    navData?.map(item => (
+      <React.Fragment key={item.id}>
+        <div
+          className="d-flex justify-content-between p-1 align-items-center col-11 m-auto" style={{ cursor: 'pointer' }}
+          onClick={() =>
+            item.url ? moveMenuPage(item.url, item.id)
+              : moveInternalPage(item.url, item.id)
+          }
+        >
+          <div data-bs-dismiss="offcanvas" aria-label="Close">
+            <p >{item.name}</p>
+          </div>
+
+          {/* toggle icon */}
+          {item.submenu?.length > 0 && (
+            <span
+              data-bs-toggle="collapse"
+              href={`#navCollaps${item.id}`}
+              role="button"
+              aria-expanded="false"
+              aria-controls={`navCollaps${item.id}`}
+              data-bs-dismiss=""
+              onClick={() => handleCollapseToggle(item.name.replace(/\s/g, ""))}
+              className="fs-4"
+            >
+              {idToCollapse[item.name.replace(/\s/g, "")] ? (
+                <i className="bi bi-dash p-2 fs-2 fw-bold"></i>
+              ) : (
+                <i className="bi bi-plus p-2 fs-2 fw-bold"></i>
+              )}
+            </span>
+          )}
         </div>
 
-        {/* toggle icon */}
+        {/* Sub-menu */}
         {item.submenu?.length > 0 && (
-          <span
-            data-bs-toggle="collapse"
-            href={`#navCollaps${item.id}`}
-            role="button"
-            aria-expanded="false"
-            aria-controls={`navCollaps${item.id}`}
-            data-bs-dismiss=""
-            onClick={() => handleCollapseToggle(item.name.replace(/\s/g, ""))}
-            className="fs-4"
+          <div
+            className="collapse col-11 m-auto"
+            id={`navCollaps${item.id}`}
           >
-            {idToCollapse[item.name.replace(/\s/g, "")] ? (
-              <i className="bi bi-dash p-2 fs-2 fw-bold"></i>
-            ) : (
-              <i className="bi bi-plus p-2 fs-2 fw-bold"></i>
-            )}
-          </span>
-        )}
-      </div>
-
-      {/* Sub-menu */}
-      {item.submenu?.length > 0 && (
-        <div
-          className="collapse col-11 m-auto"
-          id={`navCollaps${item.id}`}
-        >
-          <div className="card card-body">
-            {item.submenu.map(menu => (
-              <div key={menu.id}>
-                {/* parent menu item */}
-                <div
-                  className="col-11 d-flex p-1 justify-content-between align-items-center"
-                  style={{
-                    color: showSubMenu[menu.id] ? "#FD5900" : "#1A2B71",
-                    cursor: "pointer"
-                  }}
-                  onMouseEnter={() => setShowSubMenu({ [menu.id]: true })}
-                  onMouseLeave={() => setShowSubMenu({ [menu.id]: false })}
-                >
-                  <p
-                    onClick={() => moveInternalPage(menu.url, menu.id)}
-                    data-bs-dismiss="offcanvas"
-                    aria-label="Close"
-                    style={{ margin: 0 }}
-                  >
-                    {menu.name}
-                  </p>
-
-                  {/* plus / minus for child-menu */}
-                  {menu.chaildmenu?.length > 0 && (
-                    <i
-                      className={`bi ${openSubmenus[menu.id] ? "bi-dash" : "bi-plus"} fs-3 fw-bold`}
-                      onClick={e => {
-                        e.stopPropagation();
-                        toggleSubmenu(menu.id);
-                      }}
-                    />
-                  )}
-                </div>
-
-                {/* child-menu */}
-                {menu.chaildmenu?.length > 0 && (
+            <div className="card card-body">
+              {item.submenu.map(menu => (
+                <div key={menu.id}>
+                  {/* parent menu item */}
                   <div
-                    className={`navchaildmenumobile text-start ${
-                      openSubmenus[menu.id] ? "show" : ""
-                    }`}
+                    className="col-11 d-flex p-1 justify-content-between align-items-center"
                     style={{
-                      height: openSubmenus[menu.id] ? "auto" : 0,
-                      display: openSubmenus[menu.id] ? "block" : "none",
-                      overflow: "hidden",
-                      transition: "max-height 0.5s ease",
-                      color: "#1A2B71"
+                      color: showSubMenu[menu.id] ? "#FD5900" : "#1A2B71",
+                      cursor: "pointer"
                     }}
+                    onMouseEnter={() => setShowSubMenu({ [menu.id]: true })}
+                    onMouseLeave={() => setShowSubMenu({ [menu.id]: false })}
                   >
-                    {menu.chaildmenu.map(child => (
-                      <div
-                        className="navchaildmenumobile_item px-2"
-                        key={child.id}
+                    <p
+                      onClick={() => moveInternalPage(menu.url, menu.id)}
+                      data-bs-dismiss="offcanvas"
+                      aria-label="Close"
+                      style={{ margin: 0 }}
+                    >
+                      {menu.name}
+                    </p>
+
+                    {/* plus / minus for child-menu */}
+                    {menu.chaildmenu?.length > 0 && (
+                      <i
+                        className={`bi ${openSubmenus[menu.id] ? "bi-dash" : "bi-plus"} fs-3 fw-bold`}
                         onClick={e => {
                           e.stopPropagation();
-                          moveInternalPage(child.url, child.id);
+                          toggleSubmenu(menu.id);
                         }}
-                        data-bs-dismiss="offcanvas"
-                        aria-label="Close"
-                        style={{ cursor: "pointer" }}
-                      >
-                        {child.name}
-                      </div>
-                    ))}
+                      />
+                    )}
                   </div>
-                )}
-              </div>
-            ))}
+
+                  {/* child-menu */}
+                  {menu.chaildmenu?.length > 0 && (
+                    <div
+                      className={`navchaildmenumobile text-start ${openSubmenus[menu.id] ? "show" : ""
+                        }`}
+                      style={{
+                        height: openSubmenus[menu.id] ? "auto" : 0,
+                        display: openSubmenus[menu.id] ? "block" : "none",
+                        overflow: "hidden",
+                        transition: "max-height 0.5s ease",
+                        color: "#1A2B71"
+                      }}
+                    >
+                      {menu.chaildmenu.map(child => (
+                        <div
+                          className="navchaildmenumobile_item px-2"
+                          key={child.id}
+                          onClick={e => {
+                            e.stopPropagation();
+                            moveInternalPage(child.url, child.id);
+                          }}
+                          data-bs-dismiss="offcanvas"
+                          aria-label="Close"
+                          style={{ cursor: "pointer" }}
+                        >
+                          {child.name}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
-    </React.Fragment>
-  ));
+        )}
+      </React.Fragment>
+    ));
 
 
   return (
@@ -277,7 +278,12 @@ const mobileNavbar = () =>
             <p className='text-white fs-2' style={{ cursor: "pointer" }} type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMobile1" aria-controls="offcanvasMobile1"><GiHamburgerMenu /></p>
           </div>
           <div className='navbar_pcmenu'>
-            <button className='btn btn-outline-light rounded-5 mt-2' onClick={() => navigate('/log-in')}>Log-in</button>
+            <div class='d-flex gap-3 align-items-center'>
+              {user && user.token && user.token !== 'null' && user.token !== '' ?
+                <p class='fs-2' style={{ cursor: 'pointer' }} onClick={() => navigate('/profile')}><i class="bi bi-person-circle"></i></p> :
+                <button className='btn btn-outline-light rounded-5 ' onClick={() => navigate('/log-in')}>Log-in</button>
+              }
+            </div>
           </div>
         </div>
       </div>
@@ -291,7 +297,15 @@ const mobileNavbar = () =>
             </button>
           </div>
         </div>
-        <div className="offcanvas-body p-0 mt-3">{mobileNavbar()}</div>
+        <div className="offcanvas-body p-0 mt-3">
+          {mobileNavbar()}
+          <div class='text-start col-11 m-auto'>
+            {user && user.token && user.token !== 'null' && user.token !== '' ?
+              <p class='fs-4' style={{ cursor: 'pointer' }} onClick={() => navigate('/profile')} data-bs-dismiss="offcanvas" aria-label="Close"><i class="bi bi-person-circle"></i> Profile</p> :
+              <button className='btn btn-outline-light rounded-5 ' onClick={() => navigate('/log-in')} data-bs-dismiss="offcanvas" aria-label="Close">Log-in</button>
+            }
+          </div>
+        </div>
       </div>
     </>
 
