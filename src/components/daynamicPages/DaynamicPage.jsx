@@ -8,6 +8,7 @@ import ReactPlayer from 'react-player';
 import NotFound from '../NotFound';
 import ComingSoon from './ComingSoon';
 import Plans from './Plans';
+import InstagramEmbed from './InstagramEmbed';
 
 const DaynamicPage = () => {
     const { url, id } = useParams();
@@ -64,7 +65,7 @@ const DaynamicPage = () => {
         AOS.init({ duration: 2000 });
     }, []);
 
- 
+
 
     const pageinterFace = () => {
         let arr = [];
@@ -88,7 +89,7 @@ const DaynamicPage = () => {
                                     <div className='col-lg-4 col-md-6 mt-4' key={index} data-aos="fade-up">
                                         <div className='col-11 m-auto bgdmg rounded-4 h-100'>
                                             <div className='p-3'>
-                                                <img src={el?.image || el?.video_url} style={{ width: '100%', height:'250px', objectFit:'cover' }} className='rounded-4' alt="" />
+                                                <img src={el?.image || el?.video_url} style={{ width: '100%', height: '250px', objectFit: 'cover' }} className='rounded-4' alt="" />
                                             </div>
                                             <div className='col-11 m-auto mt-4'>
                                                 {el?.title && <p className='display-5 fw-bold lmg ' data-aos="fade-up">{el?.title}</p>}
@@ -259,11 +260,11 @@ const DaynamicPage = () => {
                             )}
                         </div>
                     );
-                }else if (sectionType === "subscriptionCart") {
+                } else if (sectionType === "subscriptionCart") {
                     arr.push(
-                        <Plans/>
+                        <Plans />
                     )
-                } 
+                }
                 else if (sectionType === "whyUse") {
                     arr.push(
                         <div className='col-11 m-auto bgdmg rounded-4 row mt-4 flex-column-reverse flex-md-row' key={`whyUse-${i}`}>
@@ -413,7 +414,7 @@ const DaynamicPage = () => {
     };
 
     return (
-        <div style={{minHeight:'100vh'}}>
+        <div style={{ minHeight: '100vh' }}>
             {homeData && homeData.length > 0 ?
                 <>
                     {url == "home" &&
@@ -431,7 +432,31 @@ const DaynamicPage = () => {
                                 <h class='lmg fs-1 fw-semibold' >May <span class='fw-bold' style={{ color: 'red' }}>i</span>  Services</h>
                             </div>
                         </div>}
-                    {pageinterFace()}</>
+                    {pageinterFace()}
+                    <div className="col-md-11 m-auto row gap-md-0 gap-4 align-items-start mt-5">
+                        <div className="col-md-6 d-flex justify-content-center">
+                            <div style={{ width: '100%', maxWidth: '340px', height: '400px', overflow: 'hidden' }}>
+                                <iframe
+                                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmayiservices.in%2F&tabs=timeline%2C%20events%2C%20messages&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+                                    width="100%"
+                                    height="100%"
+                                    style={{ border: 'none', overflow: 'hidden' }}
+                                    scrolling="no"
+                                    frameBorder="0"
+                                    allowFullScreen={true}
+                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                    title="Facebook Page Plugin"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="col-md-6 d-flex justify-content-center">
+                            <div style={{ width: '100%', maxWidth: '340px', height: '400px', overflow: 'hidden' }}>
+                                <InstagramEmbed />
+                            </div>
+                        </div>
+                    </div>
+                </>
                 :
                 <>  <ComingSoon /></>
             }
