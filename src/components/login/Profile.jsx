@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Profile = () => {
     const [user, setUser] = useState(null);
 
+    const data = JSON.parse(localStorage.getItem('mayiservice_user'));
+    const navigate = useNavigate()
     useEffect(() => {
-        const data = JSON.parse(localStorage.getItem('mayiservice_user'));
         if (!data) {
-            window.location.href = '/log-in';
+           navigate('/log-in')
         } else {
             setUser(data?.user);
         }
-    }, []);
+    }, [data]);
 
     const handleLogout = () => {
         localStorage.removeItem('mayiservice_user');
-        window.location.href = '/';
+        navigate('/')
     };
 
     return (
@@ -27,8 +29,8 @@ const Profile = () => {
                         <p>Name: <i className="mx-1">{user?.name}</i></p>
                         <p>Email: <i className="mx-1">{user?.username}</i></p>
                         <p>Mobile: <i className="mx-1">{user?.mobile}</i></p>
-                        <button 
-                            className="btn btn-outline-light rounded-5 mt-3" 
+                        <button
+                            className="btn btn-outline-light rounded-5 mt-3"
                             onClick={handleLogout}
                         >
                             Log-out

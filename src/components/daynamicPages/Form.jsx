@@ -15,15 +15,7 @@ const Form = () => {
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
 
-    // Check for user authentication
-    useEffect(() => {
-        const userData = JSON.parse(localStorage.getItem('mayiservice_user'));
-        if (userData && userData.user) {
-            setUser(userData.user);
-        } else {
-            window.location.href = '/log-in'; // Redirect if not logged in
-        }
-    }, []);
+ 
 
     // Handle input change
     const handleChange = (e) => {
@@ -45,7 +37,7 @@ const Form = () => {
         setLoading(true);
         try {
             // Make your API call
-            const response = await axios.post('https://your-api-endpoint.com/contact', {
+            const response = await axios.post('https://backend.mayiservicespvtltd.com/api/contactus.php?action=saveContactUs', {
                 ...formData,
                 userId: user?._id // if needed
             });
@@ -58,6 +50,9 @@ const Form = () => {
                 city: '',
                 message: ''
             });
+            setTimeout(() => {
+                setSuccess('')
+            }, 3000); // Clear success message after 3 seconds
         } catch (err) {
             setError("Failed to send message. Please try again.");
         } finally {

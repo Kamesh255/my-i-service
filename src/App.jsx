@@ -36,14 +36,14 @@ function App() {
           <Route path="/" element={<Navigate to={`/${homePage.url}/${homePage.id}`} replace />} />
         )}
         <Route path={'/:url/:id'} element={<DaynamicPage />} />
-        <Route path='/log-in' element={<Login />} />
+        {/* <Route path='/log-in' element={<Login />} />
         <Route path='/sign-up' element={<Signup />} />
-        <Route path='/profile' element={<Profile />} />
+        <Route path='/profile' element={<Profile />} /> */}
 
 
 
         <Route path='*' element={<NotFound />} />
-        <Route path='/plans' element={<Plans />} />
+        {/* <Route path='/plans' element={<Plans />} /> */}
 
 
       </Routes>
