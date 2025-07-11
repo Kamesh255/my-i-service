@@ -306,7 +306,7 @@ const DaynamicPage = () => {
                                 <br />
                                 {pageSection?.title && <p className='display-5 fw-bold '>{pageSection?.title}</p>}
                                 {pageSection?.subtitle && <p className='fs-5 '>{pageSection?.subtitle}</p>}
-                                {pageSection?.content && <p className='' style={{ color: "white" }} dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
+                                {pageSection?.content && <p style={{ color: "white" }} dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
                                 {(pageSection?.button_text1 || pageSection?.button_text2) && (
                                     <div className="d-flex m-auto gap-3 align-items-center justify-content-center">
                                         {pageSection?.button_text1 && (
@@ -328,7 +328,7 @@ const DaynamicPage = () => {
                                 <br />
                                 {pageSection?.title && <p className='display-5 fw-bold '>{pageSection?.title}</p>}
                                 {pageSection?.subtitle && <p className='fs-5 '>{pageSection?.subtitle}</p>}
-                                {pageSection?.content && <p className='' style={{ color: "white" }} dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
+                                {pageSection?.content && <p   style={{ color: "white" }} dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
                                 {(pageSection?.button_text1 || pageSection?.button_text2) && (
                                     <div className="d-flex m-auto gap-3 align-items-center justify-content-center">
                                         {pageSection?.button_text1 && (
@@ -350,7 +350,7 @@ const DaynamicPage = () => {
                                 <br />
                                 {pageSection?.title && <p className='display-5 fw-bold '>{pageSection?.title}</p>}
                                 {pageSection?.subtitle && <p className='fs-5'>{pageSection?.subtitle}</p>}
-                                {pageSection?.content && <p className='' style={{ color: "white" }} dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
+                                {pageSection?.content && <p   style={{ color: "white" }} dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
                                 {(pageSection?.button_text1 || pageSection?.button_text2) && (
                                     <div className="d-flex m-auto gap-3 align-items-center justify-content-center">
                                         {pageSection?.button_text1 && (
@@ -369,7 +369,7 @@ const DaynamicPage = () => {
                     arr.push(
                         <div className='col-11 m-auto rounded-4 mt-4 ' style={{ border: "5px solid #082b31" }} data-aos="fade-up" key={`borderCartInfo-${i}`}>
                             <br />
-                            <div className='col-11 m-auto text-start'>
+                            <div className='col-11 m-auto '>
                                 {pageSection?.title && <p className='display-5 fw-bold text-center '>{pageSection?.title}</p>}
                                 {pageSection?.subtitle && <p className='fs-5'>{pageSection?.subtitle}</p>}
                                 {pageSection?.content && <p className='dmg' dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}

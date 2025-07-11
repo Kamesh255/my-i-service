@@ -9,6 +9,8 @@ const Footer = () => {
     const [footerData, setFooterData] = React.useState([])
 
 
+
+
     const getFooterData = () => {
         axios.get("https://backend.mayiservicespvtltd.com/api/footer.php?action=fetch")
             .then((res) => {
@@ -27,6 +29,14 @@ const Footer = () => {
     }, [])
 
     const navigate = useNavigate()
+
+    const moveInternalPage = (url, id, param1, param2) => {
+        if (url !== "#" && url !== 'null') {
+            navigate(`${url}/${id}`, {
+                state: { param1, param2 }
+            });
+        }
+    };
     return (
         <div class='bgdmg'>
             <div class='col-11 m-auto row'>
@@ -72,7 +82,7 @@ const Footer = () => {
                         {
                             footerData?.menus?.map((item, index) => {
                                 return (
-                                    <p class='mt-1' style={{ cursor: 'pointer' }} onClick={() => navigate(item?.url)} key={index}>{item?.name}</p>
+                                    <p class='mt-1' style={{ cursor: 'pointer' }} onClick={() => moveInternalPage(item.url, item.id, item.meta_title, item.meta_description)}>{item?.name}</p>
                                 )
                             })
                         }
@@ -85,7 +95,7 @@ const Footer = () => {
                         {
                             footerData?.ourproducts?.items?.map((item, index) => {
                                 return (
-                                    <a class='mt-1 p-0' style={{textDecoration:"none"}} href={item?.url} target='_blanck'  key={index}>{item?.name}</a>
+                                    <p class='mt-1' style={{ cursor: 'pointer' }} onClick={() => moveInternalPage(item.url, item.id, item.meta_title, item.meta_description)}>{item?.name}</p>
                                 )
                             })
                         }
