@@ -105,10 +105,10 @@ const DaynamicPage = () => {
                                                 {(el?.button_text1 || el?.button_text2) && (
                                                     <div className="d-flex m-auto gap-3 align-items-center justify-content-center" data-aos="fade-up">
                                                         {el?.button_text1 && (
-                                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(el?.button_link1)}> {el.button_text1} </button>
+                                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(el?.button_link1, "_blank")}> {el.button_text1} </button>
                                                         )}
                                                         {el?.button_text2 && (
-                                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(el?.button_link2)}> {el.button_text2} </button>
+                                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(el?.button_link2, "_blank")}> {el.button_text2} </button>
                                                         )}
                                                     </div>
                                                 )}
@@ -133,10 +133,10 @@ const DaynamicPage = () => {
                                                     {(el?.button_text1 || el?.button_text2) && (
                                                         <div className="d-flex m-auto gap-3 align-items-center justify-content-center" data-aos="fade-up">
                                                             {el?.button_text1 && (
-                                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(el?.button_link1)}> {el.button_text1} </button>
+                                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(el?.button_link1, "_blank")}> {el.button_text1} </button>
                                                             )}
                                                             {el?.button_text2 && (
-                                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(el?.button_link2)}> {el.button_text2} </button>
+                                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(el?.button_link2, "_blank")}> {el.button_text2} </button>
                                                             )}
                                                         </div>
                                                     )}
@@ -162,10 +162,10 @@ const DaynamicPage = () => {
                                                     {(el?.button_text1 || el?.button_text2) && (
                                                         <div className="d-flex m-auto gap-3 align-items-center justify-content-center">
                                                             {el?.button_text1 && (
-                                                                <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => navigate(el?.button_link1)}> {el.button_text1} </button>
+                                                                <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => window.open(el?.button_link1, "_blank")}> {el.button_text1} </button>
                                                             )}
                                                             {el?.button_text2 && (
-                                                                <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => navigate(el?.button_link2)}> {el.button_text2} </button>
+                                                                <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => window.open(el?.button_link2, "_blank")}> {el.button_text2} </button>
                                                             )}
                                                         </div>
                                                     )}
@@ -238,10 +238,10 @@ const DaynamicPage = () => {
                                     {(pageSection?.button_text1 || pageSection?.button_text2) && (
                                         <div className="d-flex m-auto gap-3 align-items-center justify-content-center">
                                             {pageSection?.button_text1 && (
-                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link1, "_blank")}> {pageSection.button_text1} </button>
                                             )}
                                             {pageSection?.button_text2 && (
-                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link2, "_blank")}> {pageSection.button_text2} </button>
                                             )}
                                         </div>
                                     )}
@@ -258,10 +258,10 @@ const DaynamicPage = () => {
                             {(pageSection?.button_text1 || pageSection?.button_text2) && (
                                 <div className="d-flex m-auto gap-3 align-items-center justify-content-center" data-aos="fade-up">
                                     {pageSection?.button_text1 && (
-                                        <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                        <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link1, "_blank")}> {pageSection.button_text1} </button>
                                     )}
                                     {pageSection?.button_text2 && (
-                                        <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                        <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link2, "_blank")}> {pageSection.button_text2} </button>
                                     )}
                                 </div>
                             )}
@@ -283,10 +283,10 @@ const DaynamicPage = () => {
                                     {(pageSection?.button_text1 || pageSection?.button_text2) && (
                                         <div className="d-flex gap-3 align-items-center " data-aos="fade-up">
                                             {pageSection?.button_text1 && (
-                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link1, "_blank")}> {pageSection.button_text1} </button>
                                             )}
                                             {pageSection?.button_text2 && (
-                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link2, "_blank")}> {pageSection.button_text2} </button>
                                             )}
                                         </div>
                                     )}
@@ -310,10 +310,10 @@ const DaynamicPage = () => {
                                 {(pageSection?.button_text1 || pageSection?.button_text2) && (
                                     <div className="d-flex m-auto gap-3 align-items-center justify-content-center">
                                         {pageSection?.button_text1 && (
-                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link1, "_blank")}> {pageSection.button_text1} </button>
                                         )}
                                         {pageSection?.button_text2 && (
-                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link2, "_blank")}> {pageSection.button_text2} </button>
                                         )}
                                     </div>
                                 )}
@@ -332,10 +332,10 @@ const DaynamicPage = () => {
                                 {(pageSection?.button_text1 || pageSection?.button_text2) && (
                                     <div className="d-flex m-auto gap-3 align-items-center justify-content-center">
                                         {pageSection?.button_text1 && (
-                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link1, "_blank")}> {pageSection.button_text1} </button>
                                         )}
                                         {pageSection?.button_text2 && (
-                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link2, "_blank")}> {pageSection.button_text2} </button>
                                         )}
                                     </div>
                                 )}
@@ -354,10 +354,10 @@ const DaynamicPage = () => {
                                 {(pageSection?.button_text1 || pageSection?.button_text2) && (
                                     <div className="d-flex m-auto gap-3 align-items-center justify-content-center">
                                         {pageSection?.button_text1 && (
-                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link1, "_blank")}> {pageSection.button_text1} </button>
                                         )}
                                         {pageSection?.button_text2 && (
-                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                            <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link2, "_blank")}> {pageSection.button_text2} </button>
                                         )}
                                     </div>
                                 )}
@@ -376,10 +376,10 @@ const DaynamicPage = () => {
                                 {(pageSection?.button_text1 || pageSection?.button_text2) && (
                                     <div className="d-flex mt-0 gap-3">
                                         {pageSection?.button_text1 && (
-                                            <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                            <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link1, "_blank")}> {pageSection.button_text1} </button>
                                         )}
                                         {pageSection?.button_text2 && (
-                                            <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                            <button className="btn btn-outline-dark rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link2, "_blank")}> {pageSection.button_text2} </button>
                                         )}
                                     </div>
                                 )}
@@ -399,10 +399,10 @@ const DaynamicPage = () => {
                                     {(pageSection?.button_text1 || pageSection?.button_text2) && (
                                         <div className="d-flex gap-3 align-items-center ">
                                             {pageSection?.button_text1 && (
-                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link1)}> {pageSection.button_text1} </button>
+                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link1, "_blank")}> {pageSection.button_text1} </button>
                                             )}
                                             {pageSection?.button_text2 && (
-                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => navigate(pageSection?.button_link2)}> {pageSection.button_text2} </button>
+                                                <button className="btn btn-outline-light rounded-5 mt-2" onClick={() => window.open(pageSection?.button_link2, "_blank")}> {pageSection.button_text2} </button>
                                             )}
                                         </div>
                                     )}

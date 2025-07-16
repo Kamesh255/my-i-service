@@ -95,7 +95,7 @@ const Footer = () => {
                         {
                             footerData?.ourproducts?.items?.map((item, index) => {
                                 return (
-                                    <p class='mt-1' style={{ cursor: 'pointer' }} onClick={() => moveInternalPage(item.url, item.id, item.meta_title, item.meta_description)}>{item?.name}</p>
+                                    <p class='mt-1' style={{ cursor: 'pointer' }} onClick={() => window.open(item.url,"_blank")}>{item?.name}</p>
                                 )
                             })
                         }
