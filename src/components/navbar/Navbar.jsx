@@ -51,18 +51,18 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
-const moveMenuPage = (url, id, param1, param2) => {
+const moveMenuPage = (url, id, param1, param2,param3) => {
   if (url !== "#" && url !== 'null') {
     navigate(`${url}/${id}`, {
-      state: { param1, param2 }
+      state: { param1, param2,param3 }
     });
   }
 };
 
-const moveInternalPage = (url, id, param1, param2) => {
+const moveInternalPage = (url, id, param1, param2,param3) => {
   if (url && url !== 'null' && url !== '#') {
     navigate(`/${url}/${id}`, {
-      state: { param1, param2 }
+      state: { param1, param2,param3 }
     });
   }
 };
@@ -85,7 +85,7 @@ const moveInternalPage = (url, id, param1, param2) => {
           style={i === 0 ? { marginLeft: '50px', cursor: 'pointer' } : { cursor: 'pointer' }}
           onMouseEnter={() => setShowMenu({ [navItem.id]: true })}
           onMouseLeave={() => setShowMenu({ [navItem.id]: false })}
-          onClick={() => moveMenuPage(navItem.url, navItem.id,navItem.meta_title, navItem.meta_description)}
+          onClick={() => moveMenuPage(navItem.url, navItem.id,navItem.meta_title, navItem.meta_description, navItem.meta_keywords)}
         >
           <p
             className=""
@@ -115,7 +115,7 @@ const moveInternalPage = (url, id, param1, param2) => {
                   style={showSubMenu[menu.id] ? { borderRight: '1px solid #FD5900', color: '#FD5900', cursor: 'pointer', width: '200px' } : { borderRight: '1px solid #FD5900', color: '#1A2B71', width: '200px' }}
                   onMouseEnter={() => setShowSubMenu({ [menu.id]: true })}
                   onMouseLeave={() => setShowSubMenu({ [menu.id]: false })}
-                  onClick={() => moveInternalPage(menu.url, menu.id,menu.meta_title, menu.meta_description)}
+                  onClick={() => moveInternalPage(menu.url, menu.id,menu.meta_title, menu.meta_description,menu.meta_keywords)}
                 >
                   <p>
                     {menu.name}
@@ -131,7 +131,7 @@ const moveInternalPage = (url, id, param1, param2) => {
                             key={idx}
                             onClick={(e) => {
                               e.stopPropagation(); // Important: stop parent click bubbling
-                              moveInternalPage(child.url, child.id, child.meta_title, child.meta_description);
+                              moveInternalPage(child.url, child.id, child.meta_title, child.meta_description, child.meta_keywords);
                             }}
                           >
                             {child.name}
@@ -157,8 +157,8 @@ const moveInternalPage = (url, id, param1, param2) => {
         <div
           className="d-flex justify-content-between p-1 align-items-center col-11 m-auto" style={{ cursor: 'pointer' }}
           onClick={() =>
-            item.url ? moveMenuPage(item.url, item.id,item.meta_title, item.meta_description)
-              : moveInternalPage(item.url, item.id, item.meta_title, item.meta_description)
+            item.url ? moveMenuPage(item.url, item.id,item.meta_title, item.meta_description, item.meta_keywords)
+              : moveInternalPage(item.url, item.id, item.meta_title, item.meta_description, item.meta_keywords)
           }
         >
           <div data-bs-dismiss="offcanvas" aria-label="Close">
@@ -206,7 +206,7 @@ const moveInternalPage = (url, id, param1, param2) => {
                     onMouseLeave={() => setShowSubMenu({ [menu.id]: false })}
                   >
                     <p
-                      onClick={() => moveInternalPage(menu.url, menu.id, menu.meta_title, menu.meta_description)}
+                      onClick={() => moveInternalPage(menu.url, menu.id, menu.meta_title, menu.meta_description, menu.meta_keywords)}
                       data-bs-dismiss="offcanvas"
                       aria-label="Close"
                       style={{ margin: 0 }}
@@ -245,7 +245,7 @@ const moveInternalPage = (url, id, param1, param2) => {
                           key={child.id}
                           onClick={e => {
                             e.stopPropagation();
-                            moveInternalPage(child.url, child.id, child.meta_title, child.meta_description);
+                            moveInternalPage(child.url, child.id, child.meta_title, child.meta_description, child.meta_keywords);
                           }}
                           data-bs-dismiss="offcanvas"
                           aria-label="Close"

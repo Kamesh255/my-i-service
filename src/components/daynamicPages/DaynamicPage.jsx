@@ -29,6 +29,8 @@ const DaynamicPage = () => {
     
   const param1 = state?.param1 || ''; // Fallback if not present
   const param2 = state?.param2 || '';
+  const param3 = state?.param3 || '';
+
 
     const getData = (id) => {
         axios.post(`https://backend.mayiservicespvtltd.com/api/page.php?slug=getSections&menu_id=${id}`)
@@ -436,8 +438,8 @@ const DaynamicPage = () => {
                 <meta
                     name="keywords"
                     content={
-                        param2
-                            ? `${param2}, services`
+                        param3
+                            ? `${param3}, services`
                             : 'real estate, economical clothing, healthy food, Services'
                     }
                 />
