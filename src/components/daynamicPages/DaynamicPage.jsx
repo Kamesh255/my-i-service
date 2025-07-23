@@ -93,7 +93,7 @@ const DaynamicPage = () => {
                     // Use the respective state array for these sections
                     if (sectionType === "imageCart" && imageCart.length > 0) {
                         arr.push(
-                            <div className='col-md-11  m-auto row' key="imageCartSection">
+                            <div className='col-md-11  m-auto row justify-content-center' key="imageCartSection">
                                 {imageCart.map((el, index) => (
                                     <div className='col-lg-4 col-md-6 mt-4' key={index} data-aos="fade-up">
                                         <div className='col-11 m-auto bgdmg rounded-4 h-100'>
@@ -123,7 +123,7 @@ const DaynamicPage = () => {
                         );
                     } else if (sectionType === "backgroundImageCart" && backgroundImageCart.length > 0) {
                         arr.push(
-                            <div className='col-11 m-auto row' key="backgroundImageCartSection">
+                            <div className='col-11 m-auto row justify-content-center' key="backgroundImageCartSection">
                                 {backgroundImageCart.map((el, index) => (
                                     <div className='col-md-6 p-3' key={index} data-aos="fade-up">
                                         <div className='rounded-4' style={{ width: '100%', height: "300px", backgroundImage: `url(${el?.image || el?.video_url})`, backgroundPosition: "center", backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}>
@@ -278,7 +278,8 @@ const DaynamicPage = () => {
                     arr.push(
                         <div className='col-11 m-auto bgdmg rounded-4 row mt-4 flex-column-reverse flex-md-row' key={`whyUse-${i}`}>
                             <div className='col-md-6'>
-                                <div className='col-11 m-auto text-start my-3'>
+                                <div class='d-flex align-items-center justify-content-center h-100'>
+                                    <div class='m-2 text-start '>
                                     {pageSection?.title && <p className='display-5 fw-bold lmg ' data-aos="fade-up">{pageSection?.title}</p>}
                                     {pageSection?.subtitle && <p className='fs-5 lmg' data-aos="fade-up">{pageSection?.subtitle}</p>}
                                     {pageSection?.content && <p className='lmg' data-aos="fade-up" style={{ color: "white" }} dangerouslySetInnerHTML={{ __html: pageSection?.content }}></p>}
@@ -292,6 +293,7 @@ const DaynamicPage = () => {
                                             )}
                                         </div>
                                     )}
+                                    </div>
                                 </div>
                             </div>
                             <div className='col-md-6 p-0'>
